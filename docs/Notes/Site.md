@@ -2,9 +2,9 @@
 
 ## Rappel concernant la BDD
 
-* Nom de la BDD : Sandras
 * Nom d'utilisateur : PAC
 * Mot de passe de la BDD : MySandra
+* Nom de la BDD : Sandras
 
 ## Rappel concernant l'adresse du site (localhost)
 
