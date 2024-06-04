@@ -22,9 +22,13 @@ body {
 .navbar {
     font-style: italic;
     font-size: 1.5em;
-    : pink;
 }
 
 .example-wrapper{
     color:gold;
+}
+
+.licorne {
+    background: white url(/assets/Images/licorne.png) no-repeat fixed center center ;
+    background-size: cover;
 }
