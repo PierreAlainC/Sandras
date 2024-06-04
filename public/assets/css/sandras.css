@@ -1,15 +1,30 @@
+html {
+    font-size: 20px;
+}
+
 body {
     color:black;
-    /*
-    background-color:white;
+    
+/*     background-color:white;
     background-image:url(/assets/Images/sandra.png);
     background-position:center center;
     background-attachment:fixed;
     background-repeat:no-repeat; 
-    */
+    background-size: cover; */
+    
     /*
     On peut également écrire une seule ligne de code équivalente
     */
-    background: white url(/assets/Images/sandra.png) no-repeat fixed center center;
+    background: white url(/assets/Images/sandra.png) no-repeat fixed center center ;
+    background-size: cover;
 }
 
+.navbar {
+    font-style: italic;
+    font-size: 1.5em;
+    : pink;
+}
+
+.example-wrapper{
+    color:gold;
+}
