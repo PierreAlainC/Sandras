@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{# {% block title %}Hello MainController!{% endblock %} #}
+{% block title %}Présentation de Sandra{% endblock %}
 
 {% block body %}
 <style>
@@ -8,11 +8,29 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-    <div class="example-wrapper">
+
+{% endblock %}
+
+{% block main %} 
+   
+    <div class="présentation">
         <h1>Qui est Sandra?</h1>
         
         <h2>Femme moderne, elle aborde une grande palette de compétences</h2>
         
-        <p>C'est ICI que nous auront la chance de pouvoir présenter le parcours de Sandra dans un long et joi résumé!!!</p>
+        <p>C'est ICI que nous auront la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</p>   
     </div>
+
+{# début de l'affichage des présentations concernant Sandra #}
+{% for présentation in Présentations %}
+
+    <div class="présentations">
+    <h2><strong>{{ présentation.title}}</strong></h2>
+    <q><em>{{présentation.about}}</em></q>
+    {# menu déroulant qui affichera un résumé de la présentation #}
+    <a href=""><i class=""></i><p>{{présentation.summary}}</p></a>
+    </div>
+
+{% endfor %}
+
 {% endblock %}

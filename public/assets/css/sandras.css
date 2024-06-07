@@ -2,7 +2,7 @@ html {
     font-size: 20px;
 }
 
-body {
+.default {
     color:black;
     
 /*     background-color:white;
@@ -24,21 +24,36 @@ body {
     font-size: 1.5em;
 }
 
+#topnav {
+    position: fixed;
+    align-items: center;
+    background-attachment: scroll;
+}
+
+.container-fluid {
+    border-bottom-width: 2px;
+    border-bottom-color: red;
+}
+
 .example-wrapper{
     color:gold;
 }
 
 .licorne {
     color: black;
-    background: white url(/assets/Images/licorne.png) no-repeat fixed center center ;
+    background: turquoise url(/assets/Images/licorne.png) no-repeat fixed center center ;
     /* background-size: cover; */
-    background-size: 100% 100%;
+    /* background-size: 100% 85%; */
+    background-size: auto;
 }
 
 .link-licorne {
     color: turquoise;
+    opacity: 0;
+    margin-right: 20px;
 }
 
 .link-licorne:hover{
+    opacity: 1;
     background-color: pink;
 }

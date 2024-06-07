@@ -18,15 +18,15 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-        <title>Les visages de Sandra! - {% block title %}{% endblock %}</title>
+        <title>{% block title %}Sandra, une Licorne{% endblock %}</title>
     </head>
-    <body class="default">
-        <!-- Nav -->
-        {# {% if app.session.get('theme', 'netflix') == 'netflix' %}
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        {% else %}
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fecc00;">
-        {% endif %} #}
+    <body class="Licorne">
+    <!-- Nav -->
+    {# {% if app.session.get('theme', 'netflix') == 'netflix' %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {% else %}
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fecc00;">
+    {% endif %} #}
         <nav id="topnav" class="navbar navbar-expand-lg">
             <div class="container-fluid ">
                 <a href="{{ path('unicorn') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo link-licorne">
@@ -58,9 +58,6 @@
             </div>
         </nav>
 
-    {% block body %}
-    {% endblock %}
-    
         <main>
             {% block main %}
             {% endblock %}
@@ -70,7 +67,10 @@
             {% block footer %}
             {% endblock %}
         </footer>
-
+            
     </body>
+
+    {% block body %}
+    {% endblock %}
 
 </html>

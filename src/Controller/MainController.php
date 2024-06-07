@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
+     * Accès page Licorne.
      * 
      * @Route("/licorne", name="unicorn")
      */
@@ -20,6 +21,7 @@ class MainController extends AbstractController
     }
 
     /**
+     * Page d'accueil.
      * 
      * @Route("/", name="home")
      */
@@ -31,6 +33,7 @@ class MainController extends AbstractController
     }
 
     /**
+     * Page générale de présentation de Sandra.
      * 
      * @Route("/ConnaîtreSandra", name="overview")
      */
