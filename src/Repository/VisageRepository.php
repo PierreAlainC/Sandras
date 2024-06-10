@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Visages;
+use App\Entity\Visage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Visages>
+ * @extends ServiceEntityRepository<Visage>
  *
- * @method Visages|null find($id, $lockMode = null, $lockVersion = null)
- * @method Visages|null findOneBy(array $criteria, array $orderBy = null)
- * @method Visages[]    findAll()
- * @method Visages[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Visage|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Visage|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Visage[]    findAll()
+ * @method Visage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class VisagesRepository extends ServiceEntityRepository
+class VisageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Visages::class);
+        parent::__construct($registry, Visage::class);
     }
 
-    public function add(Visages $entity, bool $flush = false): void
+    public function add(Visage $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class VisagesRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Visages $entity, bool $flush = false): void
+    public function remove(Visage $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class VisagesRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Visages[] Returns an array of Visages objects
+//     * @return Visage[] Returns an array of Visage objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class VisagesRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Visages
+//    public function findOneBySomeField($value): ?Visage
 //    {
 //        return $this->createQueryBuilder('v')
 //            ->andWhere('v.exampleField = :val')
