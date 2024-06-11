@@ -25,10 +25,10 @@
 {% for présentation in Présentations %}
 
     <div class="présentations">
-    <h2><strong>{{ présentation.title}}</strong></h2>
-    <q><em>{{présentation.about}}</em></q>
+    <h2><strong>{{ présentation.titre}}</strong></h2>
+    <q><em>{{présentation.sous_titre}}</em></q>
     {# menu déroulant qui affichera un résumé de la présentation #}
-    <a href=""><i class=""></i><p>{{présentation.summary}}</p></a>
+    <a href=""><i class=""></i><p>{{présentation.resume}}</p></a>
     </div>
 
 {% endfor %}

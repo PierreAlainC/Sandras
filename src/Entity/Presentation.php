@@ -32,10 +32,7 @@ class Presentation
      */
     private $Resume;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $Logo;
+
 
     public function getId(): ?int
     {
@@ -78,15 +75,4 @@ class Presentation
         return $this;
     }
 
-    public function getLogo(): ?string
-    {
-        return $this->Logo;
-    }
-
-    public function setLogo(string $Logo): self
-    {
-        $this->Logo = $Logo;
-
-        return $this;
-    }
 }
