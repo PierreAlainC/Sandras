@@ -15,7 +15,7 @@ class MainController extends AbstractController
      */
     public function unicorn(): Response
     {
-        return $this->render('main/licorn.html.twig', [
+        return $this->render('Licorne/licorn.html.twig', [
             'controller_name' => 'MainController',
         ]);
     }
@@ -32,15 +32,5 @@ class MainController extends AbstractController
         ]);
     }
 
-    /**
-     * Page générale de présentation de Sandra.
-     * 
-     * @Route("/ConnaîtreSandra", name="overview")
-     */
-    public function overView(): Response
-    {
-        return $this->render('main/overview.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
+
 }

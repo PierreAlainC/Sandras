@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\VisagesRepository;
+use App\Repository\VisageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=VisagesRepository::class)
+ * @ORM\Entity(repositoryClass=VisageRepository::class)
  */
-class Visages
+class Visage
 {
     /**
      * @ORM\Id
@@ -30,7 +30,7 @@ class Visages
     /**
      * @ORM\Column(type="string", length=512)
      */
-    private $Résumé;
+    private $Resume;
 
 
     public function getTitre(): ?string
@@ -57,14 +57,14 @@ class Visages
         return $this;
     }
 
-    public function getRésumé(): ?string
+    public function getResume(): ?string
     {
-        return $this->Résumé;
+        return $this->Resume;
     }
 
-    public function setRésumé(string $Résumé): self
+    public function setResume(string $Resume): self
     {
-        $this->Résumé = $Résumé;
+        $this->Resume = $Resume;
 
         return $this;
     }
