@@ -84,11 +84,32 @@ main {
     background-color: pink;
 }
 
-.présentations {
+.présentation {
     display: flex ;
     flex-direction: column;
     align-items: center;
     padding: 0px 24px;
     margin : 48px 192px;
     position: relative;
+}
+
+.présentations {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid rgba(4, 17, 194, 0.959);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(4, 17, 194, 0.349);
+    background-color: rgba(64, 224, 208, 0.5);
+    position: relative;
+}
+
+.Gauche {
+    padding: 2em 2em;
+    margin: 2em 50em 2em 10em;
+}
+
+.Droite {
+    padding: 2em 2em;
+    margin: 2em 10em 2em 50em;
 }

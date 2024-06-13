@@ -11,6 +11,9 @@
             <!-- Our custom CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/sandras.css') }}">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" type="image/x-icon">
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}

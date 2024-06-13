@@ -24,7 +24,8 @@
 {# début de l'affichage des présentations concernant Sandra #}
 {% for présentation in allPresentations %}
 
-    <div class="présentations">
+    //J'affiche mes présentations avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS.
+    <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
     <h2><strong>{{ présentation.Titre}}</strong></h2>
     <q><em>{{présentation.SousTitre}}</em></q>
     {# menu déroulant qui affichera un résumé de la présentation #}
