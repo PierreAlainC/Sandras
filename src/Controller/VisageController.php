@@ -16,7 +16,7 @@ class VisageController extends AbstractController
     {
         $allVisages = $visageRepository->findAll();
 
-        dd($allVisages);
+        //dd($allVisages);
 
         return $this->render('visage/visage.html.twig', [
             'controller_name' => 'VisageController',
