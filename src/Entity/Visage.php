@@ -32,6 +32,11 @@ class Visage
      */
     private $Resume;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomLien;
+
 
     public function getTitre(): ?string
     {
@@ -65,6 +70,18 @@ class Visage
     public function setResume(string $Resume): self
     {
         $this->Resume = $Resume;
+
+        return $this;
+    }
+
+    public function getNomLien(): ?string
+    {
+        return $this->nomLien;
+    }
+
+    public function setNomLien(string $nomLien): self
+    {
+        $this->nomLien = $nomLien;
 
         return $this;
     }

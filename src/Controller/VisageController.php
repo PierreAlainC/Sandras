@@ -14,12 +14,14 @@ class VisageController extends AbstractController
      */
     public function visageSandra(VisageRepository $visageRepository): Response
     {
+        //Je fait au préalable une injonction dans ma fonction overView pour être lié à VisageRepository
+        //Je récupère toutes les infos de toutes les présentions dans la variable $allPresentation via ma requète findAll() de mon VisageRepository ($visageRepository->findAll())
         $allVisages = $visageRepository->findAll();
 
         //dd($allVisages);
 
         return $this->render('visage/visage.html.twig', [
-            'controller_name' => 'VisageController',
+            'allVisages' => $allVisages,
         ]);
     }
 }

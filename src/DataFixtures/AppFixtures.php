@@ -37,16 +37,17 @@ class AppFixtures extends Fixture
         // On ouvre un tableau qui contient toutes nos infos pour les articles
         //$allVisage = [];
         /* On commence peut être simple avec 10 articles?? */
-        /* for ($i=0 ; $i < 10 ; $i++) {
+        for ($i=0 ; $i < 10 ; $i++) {
             $visage = new Visage();
             $visage->setTitre($faker->words(5, true));
             $visage->setResume($faker->Text(100));
             $visage->setContenu($faker->realText($maxNbChars = 500, $indexSize = 3));
+            $visage->setNomLien($faker->Text(20));
 
             $manager->persist($visage);
 
             $allVisage[] = $visage;
-        } */
+        }
 
         $manager->flush();
     }

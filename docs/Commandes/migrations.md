@@ -9,3 +9,8 @@ bin/console make:migration
 bin/console doctrine:migrations:migrate
 ```
 ===> ```bin/console d:m:m```
+
+# Envoie de nouvelles fixtures!!
+```bash
+php bin/console doctrine:fixtures:load
+```
