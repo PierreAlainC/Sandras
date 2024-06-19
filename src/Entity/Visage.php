@@ -38,6 +38,11 @@ class Visage
     private $nomLien;
 
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function getTitre(): ?string
     {
         return $this->Titre;

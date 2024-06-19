@@ -1,5 +1,12 @@
 html {
     font-size: 20px;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .default {
@@ -54,6 +61,7 @@ html {
 
 main {
     padding-top: 6em;
+    flex: 1;
 }
 
 .container-fluid {
@@ -82,6 +90,7 @@ main {
 .link-licorne:hover{
     opacity: 1;
     background-color: pink;
+    border-radius: 10px;
 }
 
 .présentation {
@@ -112,4 +121,18 @@ main {
 .Droite {
     padding: 2em 2em;
     margin: 2em 10em 2em 50em;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.back-button i {
+    margin-right: 20px;
+}
+.btn-primary {
+    border-color: aliceblue;
 }

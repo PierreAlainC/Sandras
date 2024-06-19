@@ -6,6 +6,7 @@ use App\Repository\VisageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Visage;
 
 class VisageController extends AbstractController
 {
@@ -22,6 +23,16 @@ class VisageController extends AbstractController
 
         return $this->render('visage/visage.html.twig', [
             'allVisages' => $allVisages,
+        ]);
+    }
+
+    /**
+     * @Route("/visages/visage/{id}", name="Visage")
+     */
+    public function show(Visage $visage): Response
+    {        
+        return $this->render('visage/show.html.twig', [
+            'visage' => $visage,
         ]);
     }
 }

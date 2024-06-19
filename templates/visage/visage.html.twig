@@ -26,10 +26,14 @@
 
     {# J'affiche mes visages avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS. #}
     <div class="visages {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-    <h2><strong>{{visage.Titre}}</strong></h2>
-    <q><em>{{visage.Resume}}</em></q>
-    {# Lien qui nous amenera sur la page dédiée #}
-    <a href=""><i class=""></i><p>{{visage.NomLien}}</p></a>
+        <h1><strong>{{visage.Titre}}</strong></h1>
+        <q><em>{{visage.Resume}}</em></q>
+        
+        {# Lien qui nous amenera sur la page dédiée #}
+        <h2><a href="{{ path('Visage', {'id': visage.id}) }}"><i class=""></i>
+                <p>{{visage.Titre}}</p>
+            </a>
+        </h2>
     </div>
 
 {% endfor %}
