@@ -17,15 +17,39 @@
 
     {# J'affiche mes présentations avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS. #}
     <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-    <h2><strong>{{ présentation.Titre}}</strong></h2>
-    <q><em>{{présentation.SousTitre}}</em></q>
-    {# menu déroulant qui affichera un résumé de la présentation #}
-    <a href=""><i class=""></i><p>{{présentation.Resume}}</p></a>
+        <h2><strong>{{ présentation.Titre}}</strong></h2>
+        <q><em>{{présentation.SousTitre}}</em></q>
+
+        {# menu déroulant qui affichera un résumé de la présentation #}
+        <div class="container-presentation-content">
+            <span class="toggle-arrow down">&#9660;</span> <!-- Flèche vers le bas -->
+            <div class="content-presentation">
+                <p>{{présentation.Resume}}</p>
+            </div>
+        </div>
     </div>
 
 {% endfor %}
 
+{#     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var toggleArrow = document.querySelector('.toggle-arrow');
+            var content = document.querySelector('.content');
+
+            toggleArrow.addEventListener('click', function() {
+                if (content.style.display === 'none' || content.style.display === '') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+                toggleArrow.classList.toggle('down');
+                toggleArrow.classList.toggle('up');
+            });
+        });
+    </script> #}
+
 {% endblock %}
+
 
 {% block body %}
 
