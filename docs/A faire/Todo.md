@@ -11,6 +11,8 @@
 * Réorganiser les blocks twig pour affichage etc...
 * Rajouter des tags en guise de thème pour les visages.
 * Ca serait quand même bien de faire à un moment une petite réorganisation du code genre mettre la ``` navbar ``` dans un ``` <header> ```, faire des inclusions plus organisées genre mettre le ``` {% block header %} ``` contenant la ``` navbar ``` avant le ``` {% blockmain %} ``` contenant le contenu de ma page et faire de même pour le ``` <footer> ```... Cheers!!!
+* Gérer les exceptions pour les visages et les erreurs!!
+* Faire des branches différentes pardi!!!!!!!!!!!!!!!!
 
 Mettre une image en fond d'écran!!!
 Page ``` Connaître Sandra ```.  

@@ -31,8 +31,14 @@ class VisageController extends AbstractController
      */
     public function show(Visage $visage): Response
     {        
+
         return $this->render('visage/show.html.twig', [
             'visage' => $visage,
         ]);
+
+        if ($visage === null){
+            throw $this->createNotFoundException("Aucun visage correspondant");
+        }
+
     }
 }

@@ -10,15 +10,6 @@
 {% endblock %}
 
 {% block main %} 
-<div class="container introduction">
-    <div class="introduction-header">
-        <h1 class="introduction-title visage">Et aujourd'hui</h1>
-    </div>
-
-    <div class="introduction-content">
-        <p>Avec une vie riche et pleine d'expériences diverses, Sandra a toujours su tirer le meilleur parti de la vie! Voici qui elle est à l'heure actuelle. Affichage de ces différentes façettes<p>
-    </div>
-</div>
 
 {# début de l'affichage du visage spécifique de Sandra
 NB: Affichage de l'article nommé "visage" que l'on a grâce à la variable appelée "visage" qui nous a récupéré toutes les infos de cet article via le Repo visageRepository #}
@@ -49,11 +40,13 @@ NB: Affichage de l'article nommé "visage" que l'on a grâce à la variable appe
     </div>
 
         <!-- Bouton Retour -->
-    <div class="back-button">
+    <div class="back-button text-right">
         <button onclick="goBack()" class="btn btn-primary" style="background-color: rgb(42, 46, 51)">
             <i class="fas fa-arrow-left"></i> Revenir aux Visages
         </button>
     </div>
 </div>
 
+<!-- Fichier JavaScript global -->
+<script src="{{ asset('assets/js/main.js') }}"></script
 {% endblock %}

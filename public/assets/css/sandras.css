@@ -92,6 +92,19 @@ main {
     border: 1px solid #ccc;
 }
 
+.content-entete {
+    color: rgb(209, 233, 255);
+    background-color: rgba(12, 52, 226, 0.8);
+    opacity: 0.5;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+/* Couleur or pour le texte */
+.text-gold {
+    color: gold;
+}
+
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 /* Style pour la flèche */
 /* .toggle-arrow {
