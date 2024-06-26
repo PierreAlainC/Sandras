@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\VisageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Visage;
 
@@ -27,18 +28,17 @@ class VisageController extends AbstractController
     }
 
     /**
-     * @Route("/visages/visage/{id}", name="Visage")
+     * @Route("/visages/visage/{id<\d+>}", name="Visage")
      */
     public function show(Visage $visage): Response
     {        
+        if (!$visage){
+            throw $this->createNotFoundException("Aucun visage correspondant");
+        }
 
         return $this->render('visage/show.html.twig', [
             'visage' => $visage,
         ]);
-
-        if ($visage === null){
-            throw $this->createNotFoundException("Aucun visage correspondant");
-        }
 
     }
 }

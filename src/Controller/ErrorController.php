@@ -1,25 +1,36 @@
 <?php
-// src/Controller/ErrorController.php
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\AsController;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Twig\Environment;
 
+#[AsController]
 class ErrorController extends AbstractController
 {
-    /**
-     * @Route("/error/{code}", name="error")
-     */
-    public function show(int $code): Response
-    {
-        $template = sprintf('bundles/TwigBundle/Exception/error%d.html.twig', $code);
+    private Environment $twig;
 
-        if (!$this->get('twig')->getLoader()->exists($template)) {
+    public function __construct(Environment $twig)
+    {
+        $this->twig = $twig;
+    }
+
+    public function show(\Throwable $exception): Response
+    {
+        $statusCode = $exception instanceof HttpExceptionInterface ? $exception->getStatusCode() : Response::HTTP_INTERNAL_SERVER_ERROR;
+        $typePageErreur = 'erreur';
+
+        $template = sprintf('bundles/TwigBundle/Exception/error%s.html.twig', $statusCode);
+        if (!$this->twig->getLoader()->exists($template)) {
             $template = 'bundles/TwigBundle/Exception/error.html.twig';
         }
 
-        return $this->render($template, ['code' => $code]);
+        return new Response($this->twig->render($template, [
+            'status_code' => $statusCode,
+            'exception' => $exception,
+            'page_type' => $typePageErreur,
+        ]), $statusCode);
     }
 }

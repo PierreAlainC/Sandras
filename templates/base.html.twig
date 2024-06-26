@@ -31,7 +31,7 @@
         {% endblock %}
         <title>Les visages de Sandra! - {% block title %}{% endblock %}</title>
     </head>
-    <body class="default">
+    <body class=" {% if page_type == 'erreur' %}content-erreur{% else %}default{% endif %} ">
         <div class="wrapper">
             <nav id="topnav" class="bg-dark text-white navbar navbar-expand-lg">
                 <div id="containerNavBar" class="container-fluid ">
