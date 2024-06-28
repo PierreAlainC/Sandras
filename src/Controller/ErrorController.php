@@ -20,7 +20,6 @@ class ErrorController extends AbstractController
     public function show(\Throwable $exception): Response
     {
         $statusCode = $exception instanceof HttpExceptionInterface ? $exception->getStatusCode() : Response::HTTP_INTERNAL_SERVER_ERROR;
-        $typePageErreur = 'erreur';
 
         $template = sprintf('bundles/TwigBundle/Exception/error%s.html.twig', $statusCode);
         if (!$this->twig->getLoader()->exists($template)) {
@@ -30,7 +29,6 @@ class ErrorController extends AbstractController
         return new Response($this->twig->render($template, [
             'status_code' => $statusCode,
             'exception' => $exception,
-            'page_type' => $typePageErreur,
         ]), $statusCode);
     }
 }
