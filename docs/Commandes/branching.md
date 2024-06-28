@@ -30,7 +30,6 @@ Pour voir la liste de toutes les branches et savoir sur laquelle vous vous trouv
 git branch
 ```
 
-<<<<<<< HEAD
 La branche actuelle sera marquée par un astérisque (*).  
 
 ou pour lister toutes les branches (locales et distantes) :
@@ -38,9 +37,6 @@ ou pour lister toutes les branches (locales et distantes) :
 ```bash
 git branch -a
 ```
-=======
-La branche actuelle sera marquée par un astérisque (*).
->>>>>>> b746780d16e5d6c8eabe690ce36aaaef153f7250
 
 ## Basculer entre les branches
 
