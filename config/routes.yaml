@@ -2,8 +2,11 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+<<<<<<< HEAD
 error:
     path: /error/{code}
     controller: App\Controller\ErrorController::show
     defaults:
         code: 404
+=======
+>>>>>>> b746780d16e5d6c8eabe690ce36aaaef153f7250
