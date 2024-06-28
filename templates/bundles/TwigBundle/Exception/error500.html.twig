@@ -1,0 +1,14 @@
+{# templates/bundles/TwigBundle/Exception/error500.html.twig #}
+{% extends 'bundles/TwigBundle/Exception/base_erreur.html.twig' %}
+
+{% block title %}Erreur serveur{% endblock %}
+
+{% block main %}
+    <div class="content-erreur">
+        <div class="content-message">
+            <h1>Erreur serveur interne (500)</h1>
+            <p>Une erreur est survenue sur le serveur. Veuillez réessayer plus tard.</p>
+            <a href="{{ path('home') }}">Retour à l'accueil</a>
+        </div>
+    </div>
+{% endblock %}

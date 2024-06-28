@@ -39,6 +39,34 @@ html, body {
     background-size: cover;
 }
 
+.content-erreur {
+    color:black;
+    /*
+    background-color:white;
+    background-image:url(/assets/Images/sandra.png);
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat; 
+    background-size: cover; 
+    */
+    
+    /*
+    On peut également écrire une seule ligne de code équivalente
+    */
+    background: white url(/assets/Images/erreur.png) no-repeat fixed center center ;
+    background-size: cover;
+    text-align: center;
+}
+
+.content-message {
+    width: 50%; /* Largeur de votre encadré */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    text-align: center; /* Centre le texte à l'intérieur */
+}
+
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .navbar {
     font-style: italic;
