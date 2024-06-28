@@ -30,7 +30,13 @@ Pour voir la liste de toutes les branches et savoir sur laquelle vous vous trouv
 git branch
 ```
 
-La branche actuelle sera marquée par un astérisque (*).
+La branche actuelle sera marquée par un astérisque (*).  
+
+ou pour lister toutes les branches (locales et distantes) :
+
+```bash
+git branch -a
+```
 
 ## Basculer entre les branches
 
@@ -58,4 +64,34 @@ Par exemple, pour pousser feature-x :
 
 ```bash
 git push origin feature-x
+```
+
+## Supprimer une branche locale
+
+```bash
+git branch -d nom-de-la-branche
+```
+
+ou pour forcer la suppression si la branche n'a pas été fusionnée :
+
+```bash
+git branch -D nom-de-la-branche
+```
+
+## Fusionner une branche dans la branche courante
+
+```bash
+git merge nom-de-la-branche
+```
+
+## Supprimer une branche distante
+
+```bash
+git push origin --delete nom-de-la-branche
+```
+
+## Renommer une branche
+
+```bash
+git branch -m ancien-nom nouveau-nom
 ```
