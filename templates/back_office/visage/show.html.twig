@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visage{% endblock %}
+
+{% block body %}
+    <h1>Visage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ visage.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ visage.Titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ visage.Contenu }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ visage.Resume }}</td>
+            </tr>
+            <tr>
+                <th>NomLien</th>
+                <td>{{ visage.nomLien }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_office_visage_index') }}">back to list</a>
+
+    <a href="{{ path('app_back_office_visage_edit', {'id': visage.id}) }}">edit</a>
+
+    {{ include('back_office/visage/_delete_form.html.twig') }}
+{% endblock %}

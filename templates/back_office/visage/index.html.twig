@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visage index{% endblock %}
+
+{% block body %}
+    <h1>Visage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Resume</th>
+                <th>NomLien</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for visage in visages %}
+            <tr>
+                <td>{{ visage.id }}</td>
+                <td>{{ visage.Titre }}</td>
+                <td>{{ visage.Contenu }}</td>
+                <td>{{ visage.Resume }}</td>
+                <td>{{ visage.nomLien }}</td>
+                <td>
+                    <a href="{{ path('app_back_office_visage_show', {'id': visage.id}) }}">show</a>
+                    <a href="{{ path('app_back_office_visage_edit', {'id': visage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_office_visage_new') }}">Create new</a>
+{% endblock %}
