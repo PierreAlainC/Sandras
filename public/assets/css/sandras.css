@@ -267,3 +267,13 @@ main {
     border-color: aliceblue;
     background-color: #333;
 }
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Toggle −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+.toggle-icon {
+    cursor: pointer;
+    transition: transform 3s;
+    display: inline-block;
+}
+.collapsed .toggle-icon {
+    transform: rotate(90deg);
+}

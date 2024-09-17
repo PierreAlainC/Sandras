@@ -1,67 +1,38 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Présentation de Sandra{% endblock %}
 
-{% block main %} 
-   
-
-   <div class="container my-5">
+{% block main %}
+    <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="content-entete text-gold">
                     <h1 class="text-center">Qui est Sandra?</h1>
                     <h2>Femme moderne, elle aborde une grande palette de compétences</h2>
-                    <i class="text-center">C'est ICI que nous auront la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
+                    <i class="text-center">C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
                 </div>
             </div>
         </div>
     </div>
 
-{# début de l'affichage des présentations concernant Sandra #}
-{% for présentation in allPresentations %}
-
-    {# J'affiche mes présentations avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS. #}
-    <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-        <h2><strong>{{ présentation.Titre}}</strong></h2>
-        <q><em>{{présentation.SousTitre}}</em></q>
-
-        {# menu déroulant qui affichera un résumé de la présentation #}
-        <div class="container-presentation-content">
-            <span class="toggle-arrow down">&#9660;</span> <!-- Flèche vers le bas -->
-            <div class="content-presentation">
-                <p>{{présentation.Resume}}</p>
+    {% for présentation in allPresentations %}
+        <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
+            <div class="container mt-5">
+                <h2 class="d-flex justify-content-between align-items-center">
+                    <strong>{{ présentation.Titre }}</strong>
+                </h2>
+                <q><em>{{ présentation.SousTitre }}</em></q>
+                <br>
+                <span class="toggle-icon" style="cursor: pointer;">Afficher résumé &#9660;</span>
+                <div id="articleContent{{ loop.index }}" class="collapse">
+                    <p>{{ présentation.Resume }}</p>
+                </div>
             </div>
         </div>
-    </div>
-
-{% endfor %}
-
-{#     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var toggleArrow = document.querySelector('.toggle-arrow');
-            var content = document.querySelector('.content');
-
-            toggleArrow.addEventListener('click', function() {
-                if (content.style.display === 'none' || content.style.display === '') {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-                toggleArrow.classList.toggle('down');
-                toggleArrow.classList.toggle('up');
-            });
-        });
-    </script> #}
-
+    {% endfor %}
 {% endblock %}
 
-
-{% block body %}
-
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
+{% block javascripts %}
+    <script src="{{ asset('assets/js/toggle.js') }}"></script>
 {% endblock %}
-
