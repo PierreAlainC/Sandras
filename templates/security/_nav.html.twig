@@ -8,7 +8,7 @@
                     <i class="bi bi-person-square"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profil</a></li>
+                    {# <li><a class="dropdown-item" href="#">Profil</a></li> #}
                     <li><a class="dropdown-item" href="{{ path('backoffice_main')}}">Backoffice</a></li>
                     <li>
                         <hr class="dropdown-divider">
@@ -17,10 +17,10 @@
                     {% for role in app.user.roles %}
                         <li class="dropdown-item">{{ role }}</li>
                     {% endfor %}
-                    <li>
+                    {# <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                    <li><a class="dropdown-item" href="#">Déconnexion</a></li> #}
                 </ul>
             
             

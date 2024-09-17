@@ -2,10 +2,10 @@
 
 {% block title %}New Visage{% endblock %}
 
-{% block body %}
+{% block main %}
     <h1>Create new Visage</h1>
 
-    {{ include('back_office/visage/_form.html.twig') }}
+    {{ include('backoffice/visage/_form.html.twig') }}
 
-    <a href="{{ path('app_back_office_visage_index') }}">back to list</a>
+    <a href="{{ path('app_backoffice_visage_index') }}">back to list</a>
 {% endblock %}

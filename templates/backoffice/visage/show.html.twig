@@ -2,7 +2,7 @@
 
 {% block title %}Visage{% endblock %}
 
-{% block body %}
+{% block main %}
     <h1>Visage</h1>
 
     <table class="table">
@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_back_office_visage_index') }}">back to list</a>
+    <a href="{{ path('app_backoffice_visage_index') }}">back to list</a>
 
-    <a href="{{ path('app_back_office_visage_edit', {'id': visage.id}) }}">edit</a>
+    <a href="{{ path('app_backoffice_visage_edit', {'id': visage.id}) }}">edit</a>
 
-    {{ include('back_office/visage/_delete_form.html.twig') }}
+    {{ include('backoffice/visage/_delete_form.html.twig') }}
 {% endblock %}

@@ -16,17 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class VisageController extends AbstractController
 {
     /**
-     * @Route("/", name="app_back_office_visage_index", methods={"GET"})
+     * @Route("/", name="app_backoffice_visage_index", methods={"GET"})
      */
     public function index(VisageRepository $visageRepository): Response
     {
-        return $this->render('back_office/visage/index.html.twig', [
-            'visages' => $visageRepository->findAll(),
+        $visages = $visageRepository->findAll();
+
+        return $this->render('backoffice/visage/index.html.twig', [
+            'visages' => $visages,
         ]);
     }
 
     /**
-     * @Route("/new", name="app_back_office_visage_new", methods={"GET", "POST"})
+     * @Route("/new", name="app_backoffice_visage_new", methods={"GET", "POST"})
      */
     public function new(Request $request, VisageRepository $visageRepository): Response
     {
@@ -37,27 +39,27 @@ class VisageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $visageRepository->add($visage, true);
 
-            return $this->redirectToRoute('app_back_office_visage_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_backoffice_visage_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('back_office/visage/new.html.twig', [
+        return $this->renderForm('backoffice/visage/new.html.twig', [
             'visage' => $visage,
             'form' => $form,
         ]);
     }
 
     /**
-     * @Route("/{id}", name="app_back_office_visage_show", methods={"GET"})
+     * @Route("/{id}", name="app_backoffice_visage_show", methods={"GET"})
      */
     public function show(Visage $visage): Response
     {
-        return $this->render('back_office/visage/show.html.twig', [
+        return $this->render('backoffice/visage/show.html.twig', [
             'visage' => $visage,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="app_back_office_visage_edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="app_backoffice_visage_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Visage $visage, VisageRepository $visageRepository): Response
     {
@@ -67,17 +69,17 @@ class VisageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $visageRepository->add($visage, true);
 
-            return $this->redirectToRoute('app_back_office_visage_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_backoffice_visage_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('back_office/visage/edit.html.twig', [
+        return $this->renderForm('backoffice/visage/edit.html.twig', [
             'visage' => $visage,
             'form' => $form,
         ]);
     }
 
     /**
-     * @Route("/{id}", name="app_back_office_visage_delete", methods={"POST"})
+     * @Route("/{id}", name="app_backoffice_visage_delete", methods={"POST"})
      */
     public function delete(Request $request, Visage $visage, VisageRepository $visageRepository): Response
     {
@@ -85,6 +87,6 @@ class VisageController extends AbstractController
             $visageRepository->remove($visage, true);
         }
 
-        return $this->redirectToRoute('app_back_office_visage_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_backoffice_visage_index', [], Response::HTTP_SEE_OTHER);
     }
 }

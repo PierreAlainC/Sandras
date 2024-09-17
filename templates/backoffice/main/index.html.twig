@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Le Backoffice!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block stylesheets %}
+    {{ parent() }}  {# Inclut le CSS de base du parent #}
+    <link href="{{ asset('css/backoffice-style.css') }}" rel="stylesheet">  {# Ajout de style spécifique à cette page #}
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/student/Sandras/src/Controller/Backoffice/MainController.php'|file_link(0) }}">src/Controller/Backoffice/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/student/Sandras/templates/backoffice/main/index.html.twig'|file_link(0) }}">templates/backoffice/main/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block main %}
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center">
+                    <h1 class="mb-4">Bienvenue dans le Backoffice</h1>
+                    <p class="lead">Vous avez maintenant accès à la partie administrative du site. Félicitations pour avoir réussi à accéder à cette section!</p>
+                    <p>Depuis cette interface, vous pouvez gérer les données du site, y compris les visages affichés. Cliquez sur le lien ci-dessous pour accéder à la gestion des visages.</p>
+                    <a class="btn btn-primary btn-lg" href="{{ path('app_backoffice_visage_index') }}">Gérer les Visages</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
