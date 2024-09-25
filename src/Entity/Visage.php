@@ -37,6 +37,11 @@ class Visage
      */
     private $nomLien;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
 
     public function getId(): ?int
     {
@@ -87,6 +92,18 @@ class Visage
     public function setNomLien(string $nomLien): self
     {
         $this->nomLien = $nomLien;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

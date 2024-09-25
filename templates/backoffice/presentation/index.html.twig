@@ -1,0 +1,44 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block title %}Presentation index{% endblock %}
+
+{% block main %}
+    <h1>Presentation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>SousTitre</th>
+                <th>Resume</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for presentation in presentations %}
+            <tr>
+                <td>{{ presentation.id }}</td>
+                <td>{{ presentation.Titre }}</td>
+                <td>{{ presentation.SousTitre }}</td>
+                <td>{{ presentation.Resume }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_presentation_show', {'id': presentation.id}) }}">show</a>
+                    <br>
+                    <a href="{{ path('app_backoffice_presentation_edit', {'id': presentation.id}) }}">edit</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <br>
+                    <a href="{{ path('app_backoffice_presentation_delete', {'id': presentation.id}) }}">delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_backoffice_presentation_new') }}">Create new</a>
+{% endblock %}

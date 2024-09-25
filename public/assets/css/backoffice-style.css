@@ -1,0 +1,85 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 6em;
+    flex: 1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex: 1;
+}
+
+.default {
+    color:black;
+    
+/*     background-color:white;
+    background-image:url(/assets/Images/sandra.png);
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat; 
+    background-size: cover; */
+    
+    /*
+    On peut également écrire une seule ligne de code équivalente
+    */
+    background: white url(/assets/Images/backoffice.png) no-repeat fixed center center ;
+    background-size: contain ;
+}
+
+.backoffice-button {
+    margin: 1em;
+};
+
+.backoffice-home {
+    background-color: aliceblue rgb(240, 248, 255, 0.5)
+};
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+.navbar {
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+#topnav {
+/*     position: fixed;
+    align-items: center;
+    background-attachment: scroll; */
+    position: fixed; /* La navbar reste fixe en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    z-index: 1000; /* Pour s'assurer que la navbar est au-dessus du reste du contenu */
+}
+
+.nav-link {
+    color: aqua ;
+}
+
+#containerNavBar {
+    border-bottom-width: 2px;
+    border-bottom-color: red;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}

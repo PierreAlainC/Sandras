@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice/backoffice_base.html.twig' %}
 
 {% block title %}Edit Visage{% endblock %}
 
@@ -7,7 +7,10 @@
 
     {{ include('backoffice/visage/_form.html.twig', {'button_label': 'Update'}) }}
 
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        {{ include('backoffice/visage/_delete_form.html.twig') }}
+    {% endif %}
+
     <a href="{{ path('app_backoffice_visage_index') }}">back to list</a>
 
-    {{ include('backoffice/visage/_delete_form.html.twig') }}
 {% endblock %}

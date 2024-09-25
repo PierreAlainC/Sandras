@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice/backoffice_base.html.twig' %}
 
 {% block title %}Visage index{% endblock %}
 
@@ -26,7 +26,12 @@
                 <td>{{ visage.nomLien }}</td>
                 <td>
                     <a href="{{ path('app_backoffice_visage_show', {'id': visage.id}) }}">show</a>
+                    <br>
                     <a href="{{ path('app_backoffice_visage_edit', {'id': visage.id}) }}">edit</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <br>
+                    <a href="{{ path('app_backoffice_visage_delete', {'id': visage.id}) }}">delete</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

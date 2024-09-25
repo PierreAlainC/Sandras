@@ -13,6 +13,12 @@ framework:
         cookie_samesite: lax
         storage_factory_id: session.storage.factory.native
 
+        # Durée de vie de la session
+        cookie_lifetime: 360000  # Durée de vie des cookies de session en secondes
+        # 24 heures pour les cookies
+        gc_maxlifetime: 3600   # Durée de vie des données de session en secondes
+        # 1 heure pour les données de session
+
     #esi: true
     #fragments: true
     php_errors:

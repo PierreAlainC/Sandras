@@ -41,11 +41,25 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
-        # routes du backoffice
-        - { path: ^/backoffice, roles: ROLE_ADMIN }
+        # routes delete : methods: POST
+        - { path: ^/backoffice/\w+/\d+, roles: ["ROLE_SUPER_ADMIN"] , methods: [POST]}
+        # routes edit
+        - { path: ^/backoffice/\w+/\d+/edit, roles: ["ROLE_ADMIN"] , methods: [GET, POST]}
+        # routes du backoffice général
+        - { path: ^/backoffice, roles: ROLE_USER }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: /, roles: PUBLIC_ACCESS }
+        # Autoriser l'accès à la page d'inscription à tout le monde
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+    role_hierarchy:
+        # Les utilisateurs avec le rôle Super Admin héritent du role Admin et User
+        ROLE_SUPER_ADMIN:   [ROLE_ADMIN, ROLE_USER]
+        # Les utilisateurs avec le rôle Admin héritent du role User
+        ROLE_ADMIN: [ROLE_USER]
+        # Les utilisateurs avec le rôle USER hérite du rôle Public
+        ROLE_USER: [ROLE_PUBLIC]
 
 when@test:
     security:

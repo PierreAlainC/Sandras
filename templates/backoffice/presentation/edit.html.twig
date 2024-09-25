@@ -1,0 +1,15 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block title %}Edit Presentation{% endblock %}
+
+{% block main %}
+    <h1>Edit Presentation</h1>
+
+    {{ include('backoffice/presentation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        {{ include('backoffice/presentation/_delete_form.html.twig') }}
+    {% endif %}
+
+    <a href="{{ path('app_backoffice_presentation_index') }}">back to list</a>
+{% endblock %}
