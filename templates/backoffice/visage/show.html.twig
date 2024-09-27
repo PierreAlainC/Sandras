@@ -1,0 +1,41 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block title %}Visage{% endblock %}
+
+{% block main %}
+    <h1>Visage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ visage.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ visage.Titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ visage.Contenu }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ visage.Resume }}</td>
+            </tr>
+            <tr>
+                <th>NomLien</th>
+                <td>{{ visage.nomLien }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_backoffice_visage_edit', {'id': visage.id}) }}">edit</a>
+
+    {% if is_granted ('ROLE_SUPER_ADMIN') %}
+    {{ include('backoffice/visage/_delete_form.html.twig') }}
+    {% endif %}
+
+    <a href="{{ path('app_backoffice_visage_index') }}">back to list</a>
+
+{% endblock %}

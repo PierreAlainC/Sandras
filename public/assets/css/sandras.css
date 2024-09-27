@@ -36,7 +36,7 @@ html, body {
     On peut également écrire une seule ligne de code équivalente
     */
     background: white url(/assets/Images/sandra.png) no-repeat fixed center center ;
-    background-size: cover;
+    background-size: contain;
 }
 
 .content-erreur {
@@ -65,38 +65,6 @@ html, body {
     border-radius: 15px;
     background-color: #fff;
     text-align: center; /* Centre le texte à l'intérieur */
-}
-
-−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-.navbar {
-    font-style: italic;
-    font-size: 1.5em;
-}
-
-#topnav {
-/*     position: fixed;
-    align-items: center;
-    background-attachment: scroll; */
-    position: fixed; /* La navbar reste fixe en haut de la page */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 12px;
-    z-index: 1000; /* Pour s'assurer que la navbar est au-dessus du reste du contenu */
-}
-
-.nav-link {
-    color: aqua ;
-}
-
-#containerNavBar {
-    border-bottom-width: 2px;
-    border-bottom-color: red;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
 }
 
 main {
@@ -131,6 +99,38 @@ main {
 /* Couleur or pour le texte */
 .text-gold {
     color: gold;
+}
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+.navbar {
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+#topnav {
+/*     position: fixed;
+    align-items: center;
+    background-attachment: scroll; */
+    position: fixed; /* La navbar reste fixe en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    z-index: 1000; /* Pour s'assurer que la navbar est au-dessus du reste du contenu */
+}
+
+.nav-link {
+    color: aqua ;
+}
+
+#containerNavBar {
+    border-bottom-width: 2px;
+    border-bottom-color: red;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
@@ -266,4 +266,33 @@ main {
 .btn-primary {
     border-color: aliceblue;
     background-color: #333;
+}
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Toggle −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+.toggle-icon {
+    cursor: pointer;
+    transition: transform 3s;
+    display: inline-block;
+}
+.collapsed .toggle-icon {
+    transform: rotate(90deg);
+}
+
+
+
+.ConnectionPage {
+    color: aliceblue;
+    
+    /*     background-color:white;
+        background-image:url(/assets/Images/sandra.png);
+        background-position:center center;
+        background-attachment:fixed;
+        background-repeat:no-repeat; 
+        background-size: cover; */
+        
+        /*
+        On peut également écrire une seule ligne de code équivalente
+        */
+        background: white url(/assets/Images/BackofficeCo1.png) no-repeat fixed center center ;
+        background-size: cover ;;
 }

@@ -21,9 +21,10 @@ class MainController extends AbstractController
     }
 
     /**
-     * Page d'accueil.
-     * 
+     * Page d'accueil. Route par défaut.
+     * @Route("/", name="default")
      * @Route("/", name="home")
+     * 
      */
     public function index(): Response
     {

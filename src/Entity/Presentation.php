@@ -32,6 +32,11 @@ class Presentation
      */
     private $Resume;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
 
 
     public function getId(): ?int
@@ -71,6 +76,18 @@ class Presentation
     public function setResume(string $Resume): self
     {
         $this->Resume = $Resume;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

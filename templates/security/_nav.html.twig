@@ -1,0 +1,40 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+            
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown">
+                        <span>{{ app.user.username }}</span>
+                    <i class="bi bi-person-square"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    {# <li><a class="dropdown-item" href="#">Profil</a></li> #}
+                    <li><a class="dropdown-item" href="{{ path('backoffice_main')}}">Backoffice</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li><a class="dropdown-item" href="{{ path('app_backoffice_visage_index')}}">Visages</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_backoffice_presentation_index')}}">Présentations</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    {% endif %}
+                    <li>Rôles</li>
+                    {% for role in app.user.roles %}
+                        <li class="dropdown-item">{{ role }}</li>
+                    {% endfor %}
+                    {# <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Déconnexion</a></li> #}
+                </ul>
+            
+            
+        </li>
+    </ul>
+    <a href="{{path('app_logout')}}" type="button" class="btn btn-danger me-2">Deconnexion</a>
+{% else %}
+        {# <i class="bi bi-person-square nav-link"> Visiteur</i> #}
+        <a class="nav-link" href="{{path('app_login')}}" type="button" class="btn btn- me-2">Connexion</a>
+{% endif %}
