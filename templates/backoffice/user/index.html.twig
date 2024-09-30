@@ -1,0 +1,48 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block main %}
+    <h1>User index</h1>
+
+    <a href="{{ path('app_backoffice_user_new') }}">Create new</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>UserName</th>
+                <th>IsVerified</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_backoffice_user_show', {'id': user.id}) }}">show</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <br>
+                    <a href="{{ path('app_backoffice_user_edit', {'id': user.id}) }}">edit</a>
+                    <br>
+                    <a href="{{ path('app_backoffice_user_delete', {'id': user.id}) }}">delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
