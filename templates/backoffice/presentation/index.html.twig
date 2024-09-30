@@ -24,9 +24,9 @@
                 <td>{{ presentation.Resume }}</td>
                 <td>
                     <a href="{{ path('app_backoffice_presentation_show', {'id': presentation.id}) }}">show</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <br>
                     <a href="{{ path('app_backoffice_presentation_edit', {'id': presentation.id}) }}">edit</a>
-                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <br>
                     <a href="{{ path('app_backoffice_presentation_delete', {'id': presentation.id}) }}">delete</a>
                     {% endif %}

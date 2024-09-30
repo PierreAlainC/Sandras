@@ -5,6 +5,10 @@
 {% block main %}
     <h1>Visage index</h1>
 
+
+
+    <a href="{{ path('app_backoffice_visage_new') }}">Create new</a>
+    
     <table class="table">
         <thead>
             <tr>
@@ -26,9 +30,9 @@
                 <td>{{ visage.nomLien }}</td>
                 <td>
                     <a href="{{ path('app_backoffice_visage_show', {'id': visage.id}) }}">show</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <br>
                     <a href="{{ path('app_backoffice_visage_edit', {'id': visage.id}) }}">edit</a>
-                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <br>
                     <a href="{{ path('app_backoffice_visage_delete', {'id': visage.id}) }}">delete</a>
                     {% endif %}
@@ -41,6 +45,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_backoffice_visage_new') }}">Create new</a>
 {% endblock %}

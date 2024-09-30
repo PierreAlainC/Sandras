@@ -15,6 +15,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    // Rôle de base car la propriété $roles ne peut pas être vide et nécessite forcement un Role...
+    public function __construct() {
+        $this->roles = ["ROLE_USER"]; 
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
