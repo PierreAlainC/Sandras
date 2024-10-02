@@ -27,6 +27,9 @@
                 <span class="toggle-icon" style="cursor: pointer;">Afficher résumé &#9660;</span>
                 <div id="articleContent{{ loop.index }}" class="collapse">
                     <p>{{ présentation.Resume }}</p>
+                    <div class="created-at">
+                    Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
+                    </div>
                 </div>
             </div>
         </div>

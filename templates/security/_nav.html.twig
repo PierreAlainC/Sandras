@@ -1,7 +1,20 @@
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-            
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+        <a class="nav-link active" href="{{ path('home') }}"><i class="bi bi-star-half"> Accueil</i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('overview') }}"><i class="bi bi-book"> Connaître Sandra</i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('visages') }}"><i class="bi bi-emoji-heart-eyes-fill"> Visages</i></a>
+    </li>
+</ul>
+
+{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+    {% if app.user is not null and app.user.isVerified %}
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown">
                         <span>{{ app.user.username }}</span>
@@ -13,13 +26,15 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <li><a class="dropdown-item" href="{{ path('app_backoffice_visage_index')}}">Visages</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_backoffice_presentation_index')}}">Présentations</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li><a class="dropdown-item" href="{{ path('app_backoffice_visage_index')}}">Visages</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_backoffice_presentation_index')}}">Présentations</a></li>
+                        <li>
+                        <li><a class="dropdown-item" href="{{ path('app_backoffice_user_index')}}">Users</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        {% endif %}
                     <li>Rôles</li>
                     {% for role in app.user.roles %}
                         <li class="dropdown-item">{{ role }}</li>
@@ -29,12 +44,27 @@
                     </li>
                     <li><a class="dropdown-item" href="#">Déconnexion</a></li> #}
                 </ul>
-            
-            
-        </li>
-    </ul>
-    <a href="{{path('app_logout')}}" type="button" class="btn btn-danger me-2">Deconnexion</a>
+            </li>
+        </ul>
+        <a href="{{path('app_logout')}}" type="button" class="btn btn-danger me-2">Deconnexion</a>
+    {% elseif app.user is not null and not app.user.isVerified %}
+        <div class="navbar-nav m-2 ms-auto mb-2 mb-lg-0">
+            <div>
+                {{ app.user.username }}
+
+                {# <li class="nav-item dropdown">
+                    
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown">
+                            <span>{{ app.user.username }}</span>
+                        <i class="bi bi-person-square"></i>
+                    </a>
+                </li> #}
+            </div><i class="ml-1 bi bi-person-square"></i>
+        </div>
+        <a href="{{path('app_logout')}}" type="button" class="btn btn-danger me-2">Deconnexion</a>
+    {% endif %}
 {% else %}
-        {# <i class="bi bi-person-square nav-link"> Visiteur</i> #}
-        <a class="nav-link" href="{{path('app_login')}}" type="button" class="btn btn- me-2">Connexion</a>
+    {# <i class="bi bi-person-square nav-link"> Visiteur</i> #}
+    <a class="nav-link" href="{{path('app_login')}}" type="button" class="btn btn- me-2">Connexion</a>
 {% endif %}

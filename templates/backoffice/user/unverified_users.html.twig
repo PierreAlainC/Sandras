@@ -1,0 +1,40 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block main %}
+    <h1>Demandes de Vérification</h1>
+
+    {% if unverifiedCount > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Nom d'utilisateur</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in unverifiedUsers %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.userName }}</td>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td>
+                        <form action="{{ path('app_verify_user', { id: user.id }) }}" method="post">
+                            <button class="btn-block btn-warning" type="submit">Vérifier</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+    <div class="alert alert-success" role="alert">
+        <p>Toutes les vérifications on étaient faites!</p>
+    </div>
+
+    {% endif %}
+  
+    <a class="btn border border-primary" href="{{ path('backoffice_main') }}">back to BackOffice</a>
+{% endblock %}

@@ -29,15 +29,32 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="text-center backoffice-home">
-                    <h1 class="mb-4">Bienvenue Grand Guru. Comment allez-vous aujourd'hui?</h1>
-                    <p class="lead">Vous êtes le grand, le seul. Gloire à vous et nous respectons ton autorité!</p>
-                    <p>Faites tout ce que bon vous semble, nous nous pouvons nous y entraver, personne ne le peut! Gloire à vous!</p>
-                    <p>Voici la porte vers les pouvoirs ultimes des Visages</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Visages</a>
-                    <p>Voici la porte vers les pouvoirs ultimes des Présentations</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Présentations</a>
-                    <p>Soyez clément envers nous pauvre mortels!!!</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_user_index') }}">Pauvres mortels</a>
+                    <div class="border-custom-backoffice-green rounded mb-4">
+                        <h1 class="mb-4">Bienvenue Grand Guru. Comment allez-vous aujourd'hui?</h1>
+                        <p class="lead">Vous êtes le grand, le seul. Gloire à vous et nous respectons ton autorité!</p>
+                        <p>Faites tout ce que bon vous semble, nous nous pouvons nous y entraver, personne ne le peut! Gloire à vous!</p>
+                    </div>
+
+                    {% if unverifiedCount > 0 %}   
+                    <div class="border-custom-backoffice-red rounded m-5">
+                        <div class="alert alert-danger m-1" role="alert">
+                            <p>Il y a {{ unverifiedCount }} utilisateur(s) non vérifié(s).</p>
+                        </div>
+                        <div>
+                            <p>Cliquez sur le lien ci-dessous pour vérifier les utilisateurs fraichement inscrits.</p>
+                            <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_unverified_users') }}"> <strong>VERIFIER</strong></a>
+                        </div>
+                    </div>
+                    {% endif %} 
+
+                    <div class="border-custom-backoffice-blue rounded m-2">
+                        <p>Voici la porte vers les pouvoirs ultimes des Visages</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Visages</a>
+                        <p>Voici la porte vers les pouvoirs ultimes des Présentations</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Présentations</a>
+                        <p>Soyez clément envers nous pauvre mortels!!!</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_user_index') }}">Pauvres mortels</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,15 +64,34 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="text-center backoffice-home">
-                    <h1 class="mb-4">Bienvenue dans le Backoffice!!!</h1>
-                    <p class="lead">Vous avez maintenant accès à la partie administrative du site. Félicitations pour avoir réussi à accéder à cette section! Vous faites partie des very few!</p>
-                    <p>Depuis cette interface, vous pouvez gérer les données du site, que ce soit les présentations ou bien les visages. Vous pouvez modifier, ajouter et bien sur regarder les contenus de ces parties. Dingue non?</p>
-                    <p>Cliquez sur le lien ci-dessous pour accéder à la gestion des visages.</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Gérer les Visages</a>
-                    <p>Cliquez sur le lien ci-dessous pour accéder à la gestion des présentations.</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Gérer les Présentations</a>
-                    <p>Soyez clément envers nous pauvre mortels!!!</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_user_index') }}">Pauvres mortels</a>
+                    <div class="border-custom-backoffice-green rounded mb-4">
+                        <h1 class="mb-4">Bienvenue dans le Backoffice!!!</h1>
+                        <p class="lead">Vous avez maintenant accès à la partie administrative du site. Félicitations pour avoir réussi à accéder à cette section! Vous faites partie des very few!</p>
+                        <p>Depuis cette interface, vous pouvez gérer les données du site, que ce soit les présentations ou bien les visages. Vous pouvez modifier, ajouter et bien sur regarder les contenus de ces parties. Dingue non?</p>
+                        </div>
+
+                    {% if unverifiedCount > 0 %}   
+                    <div class="border-custom-backoffice-red rounded m-5">
+                        <div class="alert alert-danger" role="alert">
+                            <p>Il y a {{ unverifiedCount }} utilisateur(s) non vérifié(s).</p>
+                        </div>
+                        <div>
+                            <p>Cliquez sur le lien ci-dessous pour vérifier les utilisateurs fraichement inscrits.</p>
+                            <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_unverified_users') }}"> <strong>VERIFIER</strong></a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="border-custom-backoffice-blue rounded m-2">
+                        <p>Cliquez sur le lien ci-dessous pour accéder à la gestion des visages.</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Gérer les Visages</a>
+
+                        <p>Cliquez sur le lien ci-dessous pour accéder à la gestion des présentations.</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Gérer les Présentations</a>
+
+                        <p>Soyez clément envers nous pauvre mortels!!!</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_user_index') }}">Pauvres mortels</a>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -65,13 +101,18 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="text-center backoffice-home">
-                    <h1 class="mb-4">Bienvenue dans le Backoffice!</h1>
-                    <p class="lead">Vous acceder à cette petite partie du backoffice vous permettant d'ajouter du contenu. Faites en bon usage!</p>
-                    <p>Depuis cette interface, vous pouvez donc ajouter un Visage ou une présentation à votre bon vouloir. Mais n'oubliez pas que le contenu sera vérifier avant d'être approuvé. Attention de ne pas se faire BAN!</p>
-                    <p>Cliquez sur le lien ci-dessous pour ajouter un visage.</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Ajout d'un Visage</a>
-                    <p>Cliquez sur le lien ci-dessous pour ajouter une présentation.</p>
-                    <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Ajout d'une Présentation</a>
+                    <div class="border-custom-backoffice-green rounded mb-4">
+                        <h1 class="mb-4">Bienvenue dans le Backoffice!</h1>
+                        <p class="lead">Vous acceder à cette petite partie du backoffice vous permettant d'ajouter du contenu. Faites en bon usage!</p>
+                        <p>Depuis cette interface, vous pouvez donc ajouter un Visage ou une présentation à votre bon vouloir. Mais n'oubliez pas que le contenu sera vérifier avant d'être approuvé. Attention de ne pas se faire BAN!</p>
+                        <p>Cliquez sur le lien ci-dessous pour ajouter un visage.</p>
+                    </div>
+
+                    <div class="border-custom-backoffice-blue rounded m-2">
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Ajout d'un Visage</a>
+                        <p>Cliquez sur le lien ci-dessous pour ajouter une présentation.</p>
+                        <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_presentation_index') }}">Ajout d'une Présentation</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,22 +22,28 @@ NB: Affichage de l'article nommé "visage" que l'on a grâce à la variable appe
     </div> #}
     
 <div class="container visageSpecifique">
-    <div class="article-header">
+    <div class="article-header visages">
         <h1 class="article-title"><strong>{{ visage.Titre }}</strong></h1>
         {# <p class="article-meta">Publié par <a href="#">Auteur</a> le 19 juin 2024</p> #}
         <em>{{ visage.Resume }}</em>
+
+        <div class="article-content">
+            <p>{{ visage.Contenu }}</p>
+            <div class="created-at">
+                Publié le : {{ visage.createdAt|date('d/m/Y') }} à {{ visage.createdAt|date('H:i') }}
+            </div>
+
+            <div class="article-tags">
+                <span>Tags:</span>
+                <a href="#" class="badge badge-primary">Tag1</a>
+                <a href="#" class="badge badge-secondary">Tag2</a>
+                <a href="#" class="badge badge-success">Tag3</a>
+            </div>
+        </div>
+
     </div>
     
-    <div class="article-content">
-        <p>{{ visage.Contenu }}</p>
-    </div>
-    
-    <div class="article-tags">
-        <span>Tags:</span>
-        <a href="#" class="badge badge-primary">Tag1</a>
-        <a href="#" class="badge badge-secondary">Tag2</a>
-        <a href="#" class="badge badge-success">Tag3</a>
-    </div>
+
 
         <!-- Bouton Retour -->
     <div class="back-button text-right">

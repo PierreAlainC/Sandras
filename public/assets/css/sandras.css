@@ -133,6 +133,13 @@ main {
     justify-content: space-around;
 }
 
+/* Afficher le menu dropdown lorsqu'on survole le parent */
+.nav-item.dropdown:hover .dropdown-menu{
+    display: block;
+    transition: all 2s ease-in-out;
+}
+
+
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 /* Style pour la flèche */
 /* .toggle-arrow {
@@ -211,6 +218,15 @@ main {
 .Droite {
     padding: 2em 2em;
     margin: 2em 10em 2em 50em;
+}
+
+/* Autant pour les présentations que pour les visages*/
+.created-at {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.9em;
+    color: rgb(50, 51, 11);
 }
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES VISAGES −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−

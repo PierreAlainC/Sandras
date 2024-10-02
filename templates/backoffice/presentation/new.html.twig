@@ -1,11 +1,11 @@
-{% extends 'backoffice_base.html.twig' %}
+{% extends 'backoffice/backoffice_base.html.twig' %}
 
 {% block title %}New Presentation{% endblock %}
 
-{% block body %}
+{% block main %}
     <h1>Create new Presentation</h1>
 
-    {{ include('presentation/_form.html.twig') }}
+    {{ include('backoffice/presentation/_form.html.twig') }}
 
-    <a href="{{ path('app_presentation_index') }}">back to list</a>
+    <a href="{{ path('app_backoffice_presentation_index') }}">back to list</a>
 {% endblock %}
