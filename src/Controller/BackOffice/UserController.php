@@ -44,8 +44,13 @@ class UserController extends AbstractController
     public function verifyUser(User $user): Response
     {
         $entityManager = $this->doctrine->getManager();
-        $user->setIsVerified(true); // Met à jour l'état de vérification
-        $entityManager->flush();
+
+            $user->setIsVerified(true); // Met à jour l'état de vérification
+            $entityManager->flush();
+
+        // Ajouter un message flash après l'approbation
+        $this->addFlash('success', 'L\'utilisateur a été validé avec succès.');
+        
 
         return $this->redirectToRoute('app_backoffice_unverified_users');
     }

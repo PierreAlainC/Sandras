@@ -1,29 +1,33 @@
+/* Retour en arrière en fonction du cache du navigateur */
 function goBack() {
     window.history.back();
 };
 
-// A reprendre pour l'affichage et la réduction grâce au clique sur une flêche qui permet de lire le contenu de ma présentation!!!!!!!!!!!!!!!!!!
-/* document.addEventListener("DOMContentLoaded", function() {
-    var toggleArrow = document.querySelector('.toggle-arrow');
-    var content = document.querySelector('.content');
+/* Affichage du lien licorne et de sa partie cachée uniquement si la touche ctrl est appuyer */
+document.addEventListener("DOMContentLoaded", function() {
+    const hiddenDiv = document.getElementById("hiddenDiv");
+    const hoverTarget = document.querySelector(".hover-target");
 
-    toggleArrow.addEventListener('click', function() {
-        content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
-        toggleArrow.classList.toggle('down');
-        toggleArrow.classList.toggle('up');
+    hoverTarget.addEventListener("mouseover", function(event) {
+        // Vérifiez si la touche Ctrl est enfoncée
+        if (event.ctrlKey) {
+            hiddenDiv.style.visibility = "visible"; // Rendre la div visible
+        }
     });
-}); */
 
+    hoverTarget.addEventListener("mouseout", function() {
+        hiddenDiv.style.visibility = "hidden"; // Rendre la div invisible
+    });
 
-// A reprendre pour l'affichage toujours centré de mon entête de mes présentations!!!!!!!!!!!!!!!!
-/* function positionElement() {
-    var presentation = document.querySelector('.presentation');
-    var windowHeight = window.innerHeight;
-    var elementHeight = presentation.offsetHeight;
-    var topPosition = (windowHeight * 0.33) - (elementHeight / 2);
+    document.addEventListener("keydown", function(event) {
+        if (event.ctrlKey) {
+            hiddenDiv.style.visibility = "visible"; // Rendre la div visible si Ctrl est enfoncé
+        }
+    });
 
-    presentation.style.top = topPosition + 'px';
-}
-
-window.addEventListener('resize', positionElement);
-window.addEventListener('load', positionElement); */
+    document.addEventListener("keyup", function(event) {
+        if (!event.ctrlKey) {
+            hiddenDiv.style.visibility = "hidden"; // Rendre la div invisible si Ctrl est relâché
+        }
+    });
+});

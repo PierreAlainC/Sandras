@@ -47,6 +47,18 @@
                     </div>
                     {% endif %} 
 
+                    {% if unapprovedCount > 0 %}   
+                    <div class="border-custom-backoffice-red rounded m-5">
+                        <div class="alert alert-danger m-1" role="alert">
+                            <p>Il y a {{ unapprovedCount }} visage(s) non vérifié(s).</p>
+                        </div>
+                        <div>
+                            <p>Cliquez sur le lien ci-dessous pour approuver les visages fraichement créés.</p>
+                            <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_unapproved_visages') }}"> <strong>APPROUVER</strong></a>
+                        </div>
+                    </div>
+                    {% endif %} 
+
                     <div class="border-custom-backoffice-blue rounded m-2">
                         <p>Voici la porte vers les pouvoirs ultimes des Visages</p>
                         <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_visage_index') }}">Visages</a>
@@ -81,6 +93,19 @@
                         </div>
                     </div>
                     {% endif %}
+
+                    {% if unapprovedCount > 0 %}   
+                    <div class="border-custom-backoffice-red rounded m-5">
+                        <div class="alert alert-danger m-1" role="alert">
+                            <p>Il y a {{ unapprovedCount }} visage(s) non vérifié(s).</p>
+                        </div>
+                        <div>
+                            <p>Cliquez sur le lien ci-dessous pour approuver les visages fraichement créés.</p>
+                            <a class="btn btn-primary btn-lg backoffice-button" href="{{ path('app_backoffice_unapproved_visages') }}"> <strong>APPROUVER</strong></a>
+                        </div>
+                    </div>
+                    {% endif %} 
+
 
                     <div class="border-custom-backoffice-blue rounded m-2">
                         <p>Cliquez sur le lien ci-dessous pour accéder à la gestion des visages.</p>

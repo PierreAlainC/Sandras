@@ -182,9 +182,26 @@ main {
 
 .link-licorne:hover{
     opacity: 1;
-    background-color: #E3D6C5;
+    background-color: pink;
     border-radius: 10px;
 }
+
+.hover-target {
+    position: relative;
+}
+
+.hidden-div {
+    visibility: hidden; /* Rendre la div invisible */
+    width: 200px; /* Largeur de la div */
+    height: 100px; /* Hauteur de la div */
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    position: absolute; /* Pour pouvoir la positionner précisément */
+    padding: 10px; /* Ajout de padding */
+    z-index: 1000; /* Assurez-vous qu'elle est au-dessus des autres éléments */
+}
+
+
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES PRESENTATIONS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 /* A reprendre pour l'affichage de mon entête des présentations */
