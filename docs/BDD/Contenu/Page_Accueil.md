@@ -1,3 +1,6 @@
+# Page d'acceuil
+
+```bash
 {% extends 'base.html.twig' %}
 
 
@@ -102,3 +105,4 @@
 </div>
 
 {% endblock %}
+```

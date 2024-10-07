@@ -35,7 +35,7 @@ html, body {
     /*
     On peut également écrire une seule ligne de code équivalente
     */
-    background: white url(/assets/Images/sandra.png) no-repeat fixed center center ;
+    background: #E3D6C5 url(/assets/Images/sandra.png) no-repeat fixed center center ;
     background-size: contain;
 }
 
@@ -100,6 +100,46 @@ main {
 .text-gold {
     color: gold;
 }
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Boutons page acceuil −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+
+.btn-old {
+    background-color: #fff !important; /* Fond blanc */
+    color: #000 !important; /* Texte noir */
+    border: 2px solid #000; /* Bordure noire */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase !important; /* Forcer les majuscules */
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Enlever le soulignement du lien */
+}
+
+.btn-old:hover {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+}
+
+
+
+.btn-modern {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Blanc */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Enlever le soulignement du lien */
+}
+
+.btn-modern:hover {
+    background-color: #0056b3; /* Teinte de bleu plus foncé */
+}
+
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .navbar {
@@ -167,11 +207,8 @@ main {
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PAGE LICORNE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .Licorne {
-    color: black;
-    background: turquoise url(/assets/Images/licorne.png) no-repeat fixed center center ;
+    background: #E3D6C5 url(/assets/Images/sandra.png) no-repeat fixed center center;
     background-size: contain;
-    height: 100vh;
-    margin: 0;
 }
 
 .link-licorne {
