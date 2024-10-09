@@ -9,7 +9,7 @@
             <div class="col-md-10">
                 <div class="content-entete text-gold">
                     <h1 class="text-center">Qui est Sandra?</h1>
-                    <h2>Femme moderne, elle aborde une grande palette de compétences</h2>
+                    <h3>Femme moderne, elle aborde une grande palette de compétences</h3>
                     <i class="text-center">C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
                 </div>
             </div>
@@ -18,22 +18,32 @@
 
     {% for présentation in allPresentations %}
         <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-            <div class="container mt-5">
-                <h2 class="d-flex justify-content-between align-items-center">
+            <div class="container">
+                <h2 class="{# d-flex justify-content-between align-items-center #} text-center m-4">
                     <strong>{{ présentation.Titre }}</strong>
                 </h2>
-                <q><em>{{ présentation.SousTitre }}</em></q>
+                <h5 class="m-3"><q><em>{{ présentation.SousTitre }}</em></q></h5>
                 <br>
-                <span class="toggle-icon" style="cursor: pointer;">Afficher résumé &#9660;</span>
-                <div id="articleContent{{ loop.index }}" class="collapse">
+                <span class="toggle-icon" style="cursor: pointer;" data-target="#articleContent{{ loop.index }}">
+                    Afficher résumé &#9660;
+                </span>
+                <div id="articleContent{{ loop.index }}" class="collapse m-4">
                     <p>{{ présentation.Resume }}</p>
                     <div class="created-at">
-                    Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
+                        Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
                     </div>
                 </div>
             </div>
         </div>
     {% endfor %}
+
+        <!-- Bouton Retour Page Acceuil -->
+    <div class="back-button text-right m-4">
+        <button onclick="{{ path('home') }}" class="btn btn-primary" style="background-color: rgb(42, 46, 51)">
+            <i class="bi bi-arrow-counterclockwise"></i> Revenir à l'Acceuil
+        </button>
+    </div>
+
 {% endblock %}
 
 {% block javascripts %}

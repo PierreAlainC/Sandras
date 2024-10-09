@@ -22,41 +22,14 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
         <!-- favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
 
         <title>Les visages de Sandra! - {% block title %}{% endblock %}</title>
     </head>
     <body class="default">
         <div class="wrapper">
-            <nav id="topnav" class="bg-dark text-white navbar navbar-expand-lg">
-                <div id="containerNavBar" class="container-fluid">
-    
-                      {#   <div class="hover-target" style="padding: 50px; background-color: lightgrey; position: relative;">
-                            Survolez-moi avec Ctrl enfoncé
-                            <div class="hidden-div" id="hiddenDiv">
-                                Contenu de la div cachée !
-                            </div>
-                        </div> #}
-                    <div class ="hover-target"> 
-                        <div id="hiddenDiv" class=" link-licorne p-2">
-                            <a href="{{ path('unicorn') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo ">
-                                <img src="{{ asset('assets/favicon.png') }}" height="24" alt="Sandra">
-                                <span class="header-logo__title">Sandra</span>
-                            </a>
-                            
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                    </div>
-
-
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        {{ include ('security/_nav.html.twig')}}
-                    </div>
-                </div>
-            </nav>
+            
+            {{ include ('security/_nav.html.twig')}}
 
             <div class="content">
                 <main>
@@ -125,7 +98,8 @@
             </footer>
         
         </div>
-        <script src="{{ asset('assets/js/main.js') }}" defer></script>
+>
     </body>
-
+    <script src="{{ asset('assets/js/main.js') }}" defer></script>
+    <script src="{{ asset('assets/js/toggle.js') }}" defer></script>
 </html>

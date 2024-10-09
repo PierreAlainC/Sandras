@@ -90,10 +90,11 @@ main {
 
 .content-entete {
     color: rgb(209, 233, 255);
-    background-color: rgba(12, 52, 226, 0.8);
+    background-color: rgba(11, 25, 87, 0.8);
     opacity: 0.5;
     padding: 2rem;
     border-radius: 15px;
+    text-shadow: 0px 0px 6px rgba(197, 203, 238, 0.945);
 }
 
 /* Couleur or pour le texte */
@@ -207,11 +208,26 @@ main {
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PAGE LICORNE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .Licorne {
-    background: #E3D6C5 url(/assets/Images/sandra.png) no-repeat fixed center center;
-    background-size: contain;
+    color:black;
+    /*
+    background-color:white;
+    background-image:url(/assets/Images/sandra.png);
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat; 
+    background-size: cover; 
+    */
+    
+    /*
+    On peut également écrire une seule ligne de code équivalente
+    */
+    background: white url(/assets/Images/erreur.png) no-repeat fixed center center ;
+    background-size: cover;
+    text-align: center;
 }
 
 .link-licorne {
+    visibility: hidden;
     color: turquoise;
     opacity: 0;
     margin-right: 20px;
@@ -259,9 +275,10 @@ main {
     align-items: center;
     border: 2px solid aliceblue;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(6, 12, 99, 0.945);
+    box-shadow: 0px 0px 15px rgba(6, 12, 99, 0.945);
     background-color: rgb(51, 51, 51, 0.5);
     position: relative;
+    text-shadow: 0px 0px 10px rgba(243, 244, 250, 0.945);
 }
 
 .Gauche {
@@ -283,6 +300,10 @@ main {
     color: rgb(50, 51, 11);
 }
 
+.show {
+    font-family: 'Times New Roman', Times, serif; 
+};
+
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES VISAGES −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .visage {
     display: flex ;
@@ -299,9 +320,11 @@ main {
     align-items: center;
     border: 2px solid rgba(255, 217, 0, 0.549);
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(255, 215, 0, 0.945);
+    box-shadow: 0px 0px 20px rgba(255, 217, 0, 0.549);
     background-color: rgb(51, 51, 51, 0.5);
     position: relative;
+    text-shadow: 0px 0px 10px rgba(243, 244, 250, 0.945);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .Gauche {

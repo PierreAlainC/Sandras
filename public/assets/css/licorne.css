@@ -1,0 +1,109 @@
+.Licorne {
+    color:black;
+    /*
+    background-color:white;
+    background-image:url(/assets/Images/sandra.png);
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat; 
+    background-size: cover; 
+    */
+    
+    /*
+    On peut également écrire une seule ligne de code équivalente
+    */
+    background: #001A30 url(/assets/Images/licorne.png) no-repeat fixed center center ;
+    background-size: contain;
+    text-align: center;
+}
+
+.ode-wrapper {
+    padding: 50px;
+    background: #f4f4f9;
+    color: #333;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    max-width: 65%;
+    margin: auto;
+}
+
+.intro-section {
+    background-color: #ffe8e8;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #a0522d;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #d2691e;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.ode-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-top: 30px;
+    color: #8b4513;
+}
+
+.ode-paragraph {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.closing-section {
+    background-color: #dcdcdc;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.closing-text {
+    font-size: 1.5em;
+    color: #696969;
+    font-style: italic;
+}
+
+/* Ajout d'animations douces */
+.ode-wrapper, .intro-section, .ode-text, .closing-section {
+    transition: opacity 3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 9s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.footer-links {
+    display: flex; /* Aligne les liens sur une même ligne */
+    justify-content: center; /* Centre les liens horizontalement */
+    margin-top: 20px; /* Espace au-dessus des liens */
+}
+
+.footer-links .link {
+    color: #007bff; /* Couleur du texte en bleu */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Met le texte en gras */
+    margin: 0 15px; /* Espace entre les liens */
+    transition: color 0.3s ease; /* Effet de transition pour les changements de couleur */
+}
+
+.footer-links .link:hover {
+    color: #0056b3; /* Couleur au survol */
+    text-decoration: underline; /* Soulignement au survol */
+}

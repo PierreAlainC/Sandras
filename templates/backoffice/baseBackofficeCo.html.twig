@@ -22,11 +22,11 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
         <!-- favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('assets/favicon_connection.ico') }}" type="image/x-icon">
 
-        {% block javascripts %}
+        {# {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        {% endblock %} #}
         <title>Les visages de Sandra! - {% block title %}{% endblock %}</title>
     </head>
     <body class="ConnectionPage">
@@ -114,5 +114,6 @@
             </footer>
         </div>
     </body>
-
+    <script src="{{ asset('assets/js/main.js') }}" defer></script>
+    <script src="{{ asset('assets/js/toggle.js') }}" defer></script
 </html>
