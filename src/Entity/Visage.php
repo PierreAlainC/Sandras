@@ -10,6 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Visage
 {
+    public function __construct()
+    {
+        // Initialise la date de création par défaut à la date et l'heure actuelles
+        $this->createdAt = new \DateTime();
+        $this->isApproved = false; // Par défault l'article "Visage" ne sera pas approuvé
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -41,6 +48,11 @@ class Visage
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isApproved = false;
 
 
     public function getId(): ?int
@@ -104,6 +116,18 @@ class Visage
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function isIsApproved(): ?bool
+    {
+        return $this->isApproved;
+    }
+
+    public function setIsApproved(bool $isApproved): self
+    {
+        $this->isApproved = $isApproved;
 
         return $this;
     }

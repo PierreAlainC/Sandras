@@ -3,6 +3,7 @@
 namespace App\Controller\BackOffice;
 
 use App\Entity\Visage;
+use Doctrine\Persistence\ManagerRegistry;
 use App\Form\VisageType;
 use App\Repository\VisageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,6 +16,46 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class VisageController extends AbstractController
 {
+    private ManagerRegistry $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine)
+    {
+        $this->doctrine = $doctrine;
+    }
+
+        /**
+     * @Route("/unapproved", name="app_backoffice_unapproved_visages")
+     */
+    public function listUnapprovedVisages(): Response
+    {
+        $entityManager = $this->doctrine->getManager();
+        $unapprovedVisage = $entityManager->getRepository(Visage::class)->findBy(['isApproved' => false]);
+        $unapprovedCount = count($unapprovedVisage); // Compte le nombre de visages non approuvés
+    
+        return $this->render('backoffice/visage/unapproved_visage.html.twig', [
+            'unapprovedVisage' => $unapprovedVisage,
+            'unapprovedCount' => $unapprovedCount, // Passe le compte des visages à approuver à la vue
+        ]);
+    }
+    
+
+    /**
+     * @Route("/admin/visage/{id}/approve", name="app_approve_visage")
+     */
+    public function approveVisage(Visage $visage): Response
+    {
+        $entityManager = $this->doctrine->getManager();
+
+            $visage->setIsApproved(true); // Met à jour l'état de l'approbation du visage
+            $entityManager->flush();
+
+        // Ajouter un message flash après l'approbation
+        $this->addFlash('success', 'Le visage a été approuvé avec succès.');
+        
+        return $this->redirectToRoute('app_backoffice_unapproved_visages')
+        ;
+    }
+
     /**
      * @Route("/", name="app_backoffice_visage_index", methods={"GET"})
      */
@@ -89,4 +130,5 @@ class VisageController extends AbstractController
 
         return $this->redirectToRoute('app_backoffice_visage_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

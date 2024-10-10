@@ -15,6 +15,15 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    // Rôle de base car la propriété $roles ne peut pas être vide et nécessite forcement un Role...
+    public function __construct() {
+        $this->roles = ["ROLE_USER"]; 
+
+        $this->createdAt = new \DateTimeImmutable();
+
+        $this->isVerified = false; // Par défaut, l'utilisateur n'est pas vérifié
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -50,6 +59,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $createdAt;
 
     public function getId(): ?int
     {
@@ -155,6 +169,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

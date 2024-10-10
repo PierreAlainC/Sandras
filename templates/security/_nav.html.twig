@@ -1,40 +1,70 @@
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-            
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown">
-                        <span>{{ app.user.username }}</span>
-                    <i class="bi bi-person-square"></i>
+<nav id="topnav" class="bg-dark text-white navbar navbar-expand-lg">
+    <div id="containerNavBar" class="container-fluid">
+        <!-- Logo -->
+        <div class ="hover-target"> 
+            <div id="hiddenDiv" class="link-licorne p-2">
+                <a href="{{ path('unicorn') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                    <img src="{{ asset('assets/favicon.png') }}" height="24" alt="Sandra">
+                    <span class="header-logo__title">Sandra</span>
                 </a>
-                <ul class="dropdown-menu">
-                    {# <li><a class="dropdown-item" href="#">Profil</a></li> #}
-                    <li><a class="dropdown-item" href="{{ path('backoffice_main')}}">Backoffice</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <li><a class="dropdown-item" href="{{ path('app_backoffice_visage_index')}}">Visages</a></li>
-                    <li><a class="dropdown-item" href="{{ path('app_backoffice_presentation_index')}}">Présentations</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    {% endif %}
-                    <li>Rôles</li>
-                    {% for role in app.user.roles %}
-                        <li class="dropdown-item">{{ role }}</li>
-                    {% endfor %}
-                    {# <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Déconnexion</a></li> #}
-                </ul>
-            
-            
-        </li>
-    </ul>
-    <a href="{{path('app_logout')}}" type="button" class="btn btn-danger me-2">Deconnexion</a>
-{% else %}
-        {# <i class="bi bi-person-square nav-link"> Visiteur</i> #}
-        <a class="nav-link" href="{{path('app_login')}}" type="button" class="btn btn- me-2">Connexion</a>
-{% endif %}
+                
+                <!-- Toggler for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main navigation -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('home') }}"><i class="bi bi-star-half"> Accueil</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('overview') }}"><i class="bi bi-book"> Connaître Sandra</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('visages') }}"><i class="bi bi-emoji-heart-eyes-fill"> Visages</i></a>
+                </li>
+            </ul>
+
+            <!-- User authentication logic -->
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% if app.user is not null and app.user.isVerified %}
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>{{ app.user.username }}</span>
+                                <i class="bi bi-person-square"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ path('backoffice_main') }}">Backoffice</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a class="dropdown-item" href="{{ path('app_backoffice_visage_index') }}">Visages</a></li>
+                                    <li><a class="dropdown-item" href="{{ path('app_backoffice_presentation_index') }}">Présentations</a></li>
+                                    <li><a class="dropdown-item" href="{{ path('app_backoffice_user_index') }}">Users</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                {% endif %}
+                                <li class="dropdown-item">Rôles :</li>
+                                {% for role in app.user.roles %}
+                                    <li class="dropdown-item">{{ role }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="{{ path('app_logout') }}" class="btn btn-danger ms-2">Déconnexion</a>
+                {% elseif app.user is not null and not app.user.isVerified %}
+                    <div class="navbar-text ms-auto mb-2 mb-lg-0">
+                        {{ app.user.username }} (Non vérifié)
+                    </div>
+                    <a href="{{ path('app_logout') }}" class="btn btn-danger ms-2">Déconnexion</a>
+                {% endif %}
+            {% else %}
+                <a href="{{ path('app_login') }}" class="btn btn-outline-light ms-auto">Connexion</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

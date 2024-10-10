@@ -1,0 +1,53 @@
+{% extends 'backoffice/backoffice_base.html.twig' %}
+
+{% block main %}
+<pre>
+    {{ dump(unapprovedCount) }}
+</pre>
+     <h1>Demandes d'Approbations</h1>
+
+    {% if unapprovedCount > 0 %}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Nom du visage</th>
+                <th>Contenu</th>
+                <th>Résumé</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for visage in unapprovedVisage %}
+                <tr>
+                    <td>{{ visage.Titre }}</td>
+                    <td>{{ visage.NomLien }}</td>
+                    <td>{{ visage.Contenu }}</td>
+                    <td>{{ visage.Resume }}</td>
+                    <td>
+                        <form action="{{ path('app_approve_visage', { id: visage.id }) }}" method="post">
+                            <button class="btn-block btn-warning" type="submit">Approuver</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    <a class="btn border border-primary" href="{{ path('backoffice_main') }}">back to BackOffice</a> 
+    </table>
+
+    {% else %}
+    <div class="alert alert-success m-5" role="alert">
+        <p>Toutes les approbations ont été faites!</p>
+    </div>
+
+    {% endif %}
+  
+{% endblock %}

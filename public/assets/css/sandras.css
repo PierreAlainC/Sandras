@@ -35,7 +35,7 @@ html, body {
     /*
     On peut également écrire une seule ligne de code équivalente
     */
-    background: white url(/assets/Images/sandra.png) no-repeat fixed center center ;
+    background: #E3D6C5 url(/assets/Images/sandra.png) no-repeat fixed center center ;
     background-size: contain;
 }
 
@@ -90,16 +90,57 @@ main {
 
 .content-entete {
     color: rgb(209, 233, 255);
-    background-color: rgba(12, 52, 226, 0.8);
+    background-color: rgba(11, 25, 87, 0.8);
     opacity: 0.5;
     padding: 2rem;
     border-radius: 15px;
+    text-shadow: 0px 0px 6px rgba(197, 203, 238, 0.945);
 }
 
 /* Couleur or pour le texte */
 .text-gold {
     color: gold;
 }
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Boutons page acceuil −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+
+.btn-old {
+    background-color: #fff !important; /* Fond blanc */
+    color: #000 !important; /* Texte noir */
+    border: 2px solid #000; /* Bordure noire */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase !important; /* Forcer les majuscules */
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Enlever le soulignement du lien */
+}
+
+.btn-old:hover {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+}
+
+
+
+.btn-modern {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Blanc */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Enlever le soulignement du lien */
+}
+
+.btn-modern:hover {
+    background-color: #0056b3; /* Teinte de bleu plus foncé */
+}
+
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− NAVBAR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .navbar {
@@ -133,6 +174,13 @@ main {
     justify-content: space-around;
 }
 
+/* Afficher le menu dropdown lorsqu'on survole le parent */
+.nav-item.dropdown:hover .dropdown-menu{
+    display: block;
+    transition: all 2s ease-in-out;
+}
+
+
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 /* Style pour la flèche */
 /* .toggle-arrow {
@@ -160,14 +208,26 @@ main {
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PAGE LICORNE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .Licorne {
-    color: black;
-    background: turquoise url(/assets/Images/licorne.png) no-repeat fixed center center ;
-    background-size: contain;
-    height: 100vh;
-    margin: 0;
+    color:black;
+    /*
+    background-color:white;
+    background-image:url(/assets/Images/sandra.png);
+    background-position:center center;
+    background-attachment:fixed;
+    background-repeat:no-repeat; 
+    background-size: cover; 
+    */
+    
+    /*
+    On peut également écrire une seule ligne de code équivalente
+    */
+    background: white url(/assets/Images/erreur.png) no-repeat fixed center center ;
+    background-size: cover;
+    text-align: center;
 }
 
 .link-licorne {
+    visibility: hidden;
     color: turquoise;
     opacity: 0;
     margin-right: 20px;
@@ -175,9 +235,26 @@ main {
 
 .link-licorne:hover{
     opacity: 1;
-    background-color: #E3D6C5;
+    background-color: pink;
     border-radius: 10px;
 }
+
+.hover-target {
+    position: relative;
+}
+
+.hidden-div {
+    visibility: hidden; /* Rendre la div invisible */
+    width: 200px; /* Largeur de la div */
+    height: 100px; /* Hauteur de la div */
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    position: absolute; /* Pour pouvoir la positionner précisément */
+    padding: 10px; /* Ajout de padding */
+    z-index: 1000; /* Assurez-vous qu'elle est au-dessus des autres éléments */
+}
+
+
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES PRESENTATIONS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 /* A reprendre pour l'affichage de mon entête des présentations */
@@ -198,9 +275,10 @@ main {
     align-items: center;
     border: 2px solid aliceblue;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(6, 12, 99, 0.945);
+    box-shadow: 0px 0px 15px rgba(6, 12, 99, 0.945);
     background-color: rgb(51, 51, 51, 0.5);
     position: relative;
+    text-shadow: 0px 0px 10px rgba(243, 244, 250, 0.945);
 }
 
 .Gauche {
@@ -212,6 +290,19 @@ main {
     padding: 2em 2em;
     margin: 2em 10em 2em 50em;
 }
+
+/* Autant pour les présentations que pour les visages*/
+.created-at {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.9em;
+    color: rgb(50, 51, 11);
+}
+
+.show {
+    font-family: 'Times New Roman', Times, serif; 
+};
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES VISAGES −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .visage {
@@ -229,9 +320,11 @@ main {
     align-items: center;
     border: 2px solid rgba(255, 217, 0, 0.549);
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(255, 215, 0, 0.945);
+    box-shadow: 0px 0px 20px rgba(255, 217, 0, 0.549);
     background-color: rgb(51, 51, 51, 0.5);
     position: relative;
+    text-shadow: 0px 0px 10px rgba(243, 244, 250, 0.945);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .Gauche {
@@ -295,4 +388,9 @@ main {
         */
         background: white url(/assets/Images/BackofficeCo1.png) no-repeat fixed center center ;
         background-size: cover ;;
+}
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Sign-in −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+.signin {
+    margin: 10em;
 }

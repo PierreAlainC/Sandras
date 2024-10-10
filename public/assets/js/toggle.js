@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     toggles.forEach(function(toggle) {
         toggle.addEventListener('click', function() {
-            // Trouver l'élément de contenu associé à ce bouton
-            const contentId = this.nextElementSibling.id;
-            const content = document.getElementById(contentId);
+            // Récupérer l'id du contenu à partir du data-target
+            const contentId = this.getAttribute('data-target');
+            const content = document.querySelector(contentId);
 
             // Toggle la visibilité du contenu
             if (content.classList.contains('show')) {

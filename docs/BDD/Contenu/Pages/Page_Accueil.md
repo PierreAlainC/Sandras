@@ -1,0 +1,108 @@
+# Page d'acceuil
+
+```bash
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+{% endblock %}
+
+{% block main %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold text-center">
+                <h1>Bienvenue sur cette peinture interactive</h1>
+                <h2 class="mt-3">Découvrez cette femme incroyable et la complexité de sa personnalité.</h2>
+                <hr class="my-4">
+                <p>Bienvenue sur le site non officiel de Sandra Tinel, un hommage à une femme moderne aux multiples talents et passions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold">
+                <p>
+                    Mère dévouée et épouse aimante, Sandra jongle avec brio entre ses responsabilités familiales et ses passions. Grande voyageuse, elle explore le monde avec une curiosité insatiable, enrichissant son expérience à chaque nouvelle destination.
+                    <br><br>
+                    Artiste dans l'âme, elle s'épanouit au piano et à la guitare, exprimant son amour pour la musique. En parallèle, sa passion pour les jeux vidéo l'immerge dans des univers fantastiques, stimulant ainsi son esprit créatif.
+                    <br><br>
+                    Son engagement envers le naturisme reflète son désir de vivre en harmonie avec la nature et de célébrer la liberté du corps. À travers ses écrits, elle partage ses réflexions et offre des conseils précieux à ceux qui souhaitent s'y initier.
+                </p>                              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold">                                   
+                <p>
+                    Comme n'importe quelle femme sur cette belle planète, plonger dans le bleu de ses yeux révèle sa complexité, sa force et ses vulnérabilités, souvent invisibles aux autres.
+                </p>                                  
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold">
+                <p>
+                    À travers de ce site, vous découvrirez toutes les facettes de Sandra : sa vie de famille, ses aventures autour du globe, ses talents artistiques et ses diverses passions. 
+                    Il est divisé en deux parties, chacune vous permettant d'explorer les expériences qui l'ont façonnée.
+                    <br><br>
+                    Dans la première section, vous découvrirez son parcours et les défis qu'elle a su et du surmonter, grâce à des présentations de son passé.
+                </p>                              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center my-4">
+    <a href="{{ path('overview') }}" class="btn btn-old">Connaître Sandra</a>
+</div>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold">
+                <p>
+                    La seconde partie vous présente la femme moderne et forte qu'elle est aujourd'hui, riche de passions et de talents variés. C'est ici que vous pourrez découvrir les visages actuels de Sandra.
+                </p>                              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center my-4">
+    <a href="{{ path('visages') }}" class="btn btn-modern">Visages</a>
+</div>
+     
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-entete text-gold"> 
+                <p>
+                    Plongez dans cet univers fascinant et laissez-vous inspirer par son histoire, où chaque expérience est une source d'inspiration. 
+                </p>                                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+```

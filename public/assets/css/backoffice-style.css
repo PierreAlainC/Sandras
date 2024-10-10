@@ -16,6 +16,9 @@ html, body {
 main {
     padding-top: 6em;
     flex: 1;
+
+    text-shadow: 1px 1px 10px white, /* Ombre blanche à droite et en bas */
+    -1px -1px 10px aliceblue; /* Ombre blanche à gauche et en haut */
 }
 
 .wrapper {
@@ -72,6 +75,8 @@ main {
 
 .nav-link {
     color: aqua ;
+    text-shadow: 1px 1px 10px rgb(135, 217, 241), /* Ombre blanche à droite et en bas */
+    -1px -1px 10px rgb(135, 217, 241); /* Ombre blanche à gauche et en haut */
 }
 
 #containerNavBar {
@@ -82,4 +87,24 @@ main {
     padding: 0;
     display: flex;
     justify-content: space-around;
+}
+
+/* Afficher le menu dropdown lorsqu'on survole le parent */
+.nav-item.dropdown:hover .dropdown-menu{
+    display: block;
+    transition: all 2s ease-in-out;
+}
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− BORDER CADRE BACKOFFICE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+
+.border-custom-backoffice-green {
+    border: 4px solid green;
+}
+
+.border-custom-backoffice-blue {
+    border: 4px solid blue;
+}
+
+.border-custom-backoffice-red {
+    border: 4px solid red;
 }

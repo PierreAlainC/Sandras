@@ -22,7 +22,7 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
         <!-- favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('assets/favicon_backoffice.ico') }}" type="image/x-icon">
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
@@ -42,18 +42,6 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{ path('home') }}"><i class="bi bi-star-half"> Accueil</i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ path('overview') }}"><i class="bi bi-book"> Connaître Sandra</i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ path('visages') }}"><i class="bi bi-emoji-heart-eyes-fill"> Visages</i></a>
-                            </li>
-                        </ul>
-
                         {{ include ('security/_nav.html.twig')}}
                     </div>
                 </div>

@@ -10,6 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Presentation
 {
+    public function __construct()
+    {
+        // Initialise la date de création par défaut à la date et l'heure actuelles
+        $this->createdAt = new \DateTime();
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
