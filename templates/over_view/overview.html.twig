@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-
 {% block title %}Présentation de Sandra{% endblock %}
 
 {% block main %}
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
                 <div class="content-entete text-gold">
-                    <h1 class="text-center">Qui est Sandra?</h1>
+                    <h1>Qui est Sandra?</h1>
                     <h3>Femme moderne, elle aborde une grande palette de compétences</h3>
-                    <i class="text-center">C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
+                    <i>C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
                 </div>
             </div>
         </div>
@@ -19,11 +18,10 @@
     {% for présentation in allPresentations %}
         <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
             <div class="container">
-                <h2 class="{# d-flex justify-content-between align-items-center #} text-center m-4">
+                <h2 class="text-center m-4">
                     <strong>{{ présentation.Titre }}</strong>
                 </h2>
                 <h5 class="m-3"><q><em>{{ présentation.SousTitre }}</em></q></h5>
-                <br>
                 <span class="toggle-icon" style="cursor: pointer;" data-target="#articleContent{{ loop.index }}">
                     Afficher résumé &#9660;
                 </span>
@@ -37,9 +35,9 @@
         </div>
     {% endfor %}
 
-        <!-- Bouton Retour Page Acceuil -->
+    <!-- Bouton Retour Page Accueil -->
     <div class="back-button text-right m-4">
-        <button onclick="{{ path('home') }}" class="btn btn-primary" style="background-color: rgb(42, 46, 51)">
+        <button onclick="location.href='{{ path('home') }}'" class="btn btn-primary">
             <i class="bi bi-arrow-counterclockwise"></i> Revenir à l'Acceuil
         </button>
     </div>

@@ -5,43 +5,50 @@
 {% endblock %}
 
 {% block main %}
-    <div class="ode-wrapper">
-        <section class="intro-section">
+    <div class="ode-wrapper container">
+        <section class="intro-section text-center mb-5">
             <h1 class="title">Une Rencontre Improbable</h1>
             <p class="subtitle">« Dans l'obscurité, tu es apparue comme un ange. »</p>
         </section>
 
-        <section class="ode-section">
-            <div class="ode-text">
-                <h2 class="section-title">Chapitre 1 : L'Éclair de Magie</h2>
-                <p class="ode-paragraph">
-                    C'était une nuit où je pensais que l'amour m'avait abandonné. Mais là, entourée d'un halo, tu es apparue, illuminant ma vie d'un éclat que je n'avais jamais connu. Instantanément, mon cœur a su qu'il avait trouvé son refuge.
-                </p>
-            </div>
-            <div class="ode-text">
-                <h2 class="section-title">Chapitre 2 : L'Admiration</h2>
-                <p class="ode-paragraph">
-                    Chaque instant passé à tes côtés est une révélation. Je suis en admiration devant la beauté de ton âme, et je me demande si je suis digne de ta présence. Mon cœur déborde d'amour et de gratitude pour ce que tu es.
-                </p>
-            </div>
-            <div class="ode-text">
-                <h2 class="section-title">Chapitre 3 : L'Amour Incommensurable</h2>
-                <p class="ode-paragraph">
-                    Ce site ne pourra jamais capturer la profondeur de mon amour pour toi. Mes mots ne sont que des murmures face à la puissance de mes sentiments. Mais sache que chaque mot écrit ici est un témoignage de l'immensité de mon amour.
-                </p>
+        <section class="ode-section mb-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="ode-text">
+                        <h2 class="section-title">Chapitre 1 : L'Éclair de Magie</h2>
+                        <p class="ode-paragraph">
+                            C'était une nuit où je pensais que l'amour m'avait abandonné. Mais là, entourée d'un halo, tu es apparue, illuminant ma vie d'un éclat que je n'avais jamais connu. Instantanément, mon cœur a su qu'il avait trouvé son refuge.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="ode-text">
+                        <h2 class="section-title">Chapitre 2 : L'Admiration</h2>
+                        <p class="ode-paragraph">
+                            Chaque instant passé à tes côtés est une révélation. Je suis en admiration devant la beauté de ton âme, et je me demande si je suis digne de ta présence. Mon cœur déborde d'amour et de gratitude pour ce que tu es.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="ode-text">
+                        <h2 class="section-title">Chapitre 3 : L'Amour Incommensurable</h2>
+                        <p class="ode-paragraph">
+                            Ce site ne pourra jamais capturer la profondeur de mon amour pour toi. Mes mots ne sont que des murmures face à la puissance de mes sentiments. Mais sache que chaque mot écrit ici est un témoignage de l'immensité de mon amour.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="closing-section">
+        <section class="closing-section text-center mb-5">
             <p class="closing-text">« Tu es ma muse, mon bonheur, ma raison d'être et ma lumière dans l'obscurité. »</p>
         </section>
 
-            <!-- Liens élégants en bas de page -->
-        <div class="footer-links">
-            <a href="{{ path('home') }}" class="link">Retour à l'accueil</a>
-            <a href="{{ path('overview') }}" class="link">Présentations</a>
+        <!-- Liens élégants en bas de page -->
+        <div class="footer-links text-center">
+            <a href="{{ path('home') }}" class="link me-3">Retour à l'accueil</a>
+            <a href="{{ path('overview') }}" class="link me-3">Présentations</a>
             <a href="{{ path('visages') }}" class="link">Visages</a>
         </div>
-
     </div>
 {% endblock %}
