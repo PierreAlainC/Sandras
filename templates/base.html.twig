@@ -11,12 +11,9 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Inclure le JavaScript Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/sandras.css') }}">
@@ -43,26 +40,26 @@
         <!-- Footer -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <div class="container-fluid p-4">
-                <div class="row align-items-center d-flex justify-content-between">
-                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <div class="row">
+                    <!-- Première colonne : Texte -->
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                         <h5 class="text-uppercase">We sure hope you do enjoy your visit!</h5>
-                        <p>
-                            Here to find out more about Sandra on the internet.
-                        </p>
+                        <p>Here to find out more about Sandra on the internet.</p>
                     </div>
 
-                    {# Affichage MEME LIGNE #}
-                    <div class="col-lg-6 col-md-6 d-flex justify-content-between mb-4 mb-md-0">
-                        <a href="https://fr.linkedin.com/in/sandra-tinel2" class="text-white" target="_blank">
-                            <i class="fab fa-linkedin fa-2x"></i> LinkedIn
-                        </a>
-                        <a href="https://www.amazon.fr/stores/Sandra-TINEL/author/B07GZF69QG?ref=dbs_a_mng_rwt_scns_share&isDramIntegrated=true&shoppingPortalEnabled=true"
-                            class="text-white" target="_blank">
-                            <i class="fab fa-amazon fa-2x"></i> Amazon
-                        </a>
-                        <a href="https://www.instagram.com/sandra_tinel/" class="text-white" target="_blank">
-                            <i class="fab fa-instagram fa-2x"></i> Instagram
-                        </a>
+                    <!-- Deuxième colonne : Liens centrés et répartis de manière égale -->                    
+                    <div class="col-lg-6 col-md-6 d-flex justify-content-center align-items-center">                        
+                        <div class="d-flex justify-content-around w-75">                            
+                            <!-- Lien LinkedIn -->
+                            <a href="https://fr.linkedin.com/in/sandra-tinel2" class="text-white" target="_blank">
+                                <i class="fab fa-linkedin fa-2x"></i> LinkedIn
+                            </a>
+                            <!-- Lien Amazon -->
+                            <a href="https://www.amazon.fr/stores/Sandra-TINEL/author/B07GZF69QG?ref=dbs_a_mng_rwt_scns_share&isDramIntegrated=true&shoppingPortalEnabled=true"
+                                class="text-white" target="_blank">
+                                <i class="fab fa-amazon fa-2x"></i> Amazon
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,7 +69,15 @@
                 <a class="text-white" href="#">YourWebsite.com</a>
             </div>
         </footer>
+
+
     </div>
+    
+    <!-- Lien vers Bootstrap JS (nécessaire pour les composants JS comme le dropdown et le navbar-toggler) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Lien vers Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
