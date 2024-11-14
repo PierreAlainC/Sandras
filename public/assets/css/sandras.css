@@ -104,26 +104,28 @@ main {
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− Boutons page acceuil −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 
-.btn-main {
-    background-color: green; /* Bleu */
-    color: #fff; /* Blanc */
-    border: none;
+.btn-old {
+    background-color: #fff !important; /* Fond blanc */
+    color: #000 !important; /* Texte noir */
+    border: 2px solid #000; /* Bordure noire */
     padding: 10px 20px;
     font-size: 16px;
-    text-transform: uppercase;
+    text-transform: uppercase !important; /* Forcer les majuscules */
     letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     text-decoration: none; /* Enlever le soulignement du lien */
-    text-shadow: 0px 0px 6px rgba(197, 203, 238, 0.945);
 }
 
-.btn-main:hover {
-    background-color: #0056b3; /* Teinte de bleu plus foncé */
+.btn-old:hover {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
 }
+
+
 
 .btn-modern {
-    background-color: rgb(14, 91, 14); /* vert */
+    background-color: #007bff; /* Bleu */
     color: #fff; /* Blanc */
     border: none;
     padding: 10px 20px;
@@ -136,7 +138,7 @@ main {
 }
 
 .btn-modern:hover {
-    background-color: greenyellow; /* Teinte de bleu plus foncé */
+    background-color: #0056b3; /* Teinte de bleu plus foncé */
 }
 
 
@@ -178,36 +180,55 @@ main {
     transition: all 2s ease-in-out;
 }
 
-.navbar-toggler {
-    border-color: white;
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+//* Styles de base pour l'article */
+.article-container {
+    margin-bottom: 20px;
 }
 
+.article-title, .article-subtitle {
+    text-align: left;
+    margin-bottom: 10px;
+}
 
+/* Styles pour la modale */
+.modal {
+    display: none; /* Cache la modale par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
 
-−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-/* Style pour la flèche */
-/* .toggle-arrow {
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
     cursor: pointer;
-    display: inline-block;
-    transition: transform 0.3s;
-} */
+}
 
-/* Flèche vers le bas */
-/* .toggle-arrow.down {
-    transform: rotate(0deg);
-} */
-
-/* Flèche vers le haut */
-/* .toggle-arrow.up {
-    transform: rotate(180deg);
-} */
-
-/* Style pour le contenu caché */
-/* .content-presentation {
-    display: none;
-    margin-top: 10px;
-} */
-
+.created-at {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 0.9em;
+    color: gray;
+}
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PAGE LICORNE −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
 .Licorne {
@@ -260,48 +281,24 @@ main {
 
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− AFFICHAGE ENCADRES PRESENTATIONS −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-/* A reprendre pour l'affichage de mon entête des présentations */
-.présentation {
-    width: 80%;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    position: relative;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.présentations {
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid aliceblue;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(6, 12, 99, 0.945);
-    background-color: rgb(51, 51, 51, 0.5);
-    position: relative;
-    text-shadow: 0px 0px 10px rgba(243, 244, 250, 0.945);
+.box {
+    width: 49%;
 }
 
-.Gauche {
-    padding: 2em 2em;
-    margin: 2em 50em 2em 10em;
+.left {
+    background-color: lightblue; /* Couleur de fond pour la div gauche */
 }
 
-.Droite {
-    padding: 2em 2em;
-    margin: 2em 10em 2em 50em;
+.right {
+    background-color: lightcoral; /* Couleur de fond pour la div droite */
 }
 
-/* Autant pour les présentations que pour les visages*/
-.created-at {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 0.9em;
-    color: rgb(50, 51, 11);
-}
 
 .show {
     font-family: 'Times New Roman', Times, serif; 

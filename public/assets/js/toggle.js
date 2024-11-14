@@ -22,3 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function toggleSummary() {
+    var summary = document.getElementById("summary");
+    var button = document.getElementById("toggle-summary");
+    if (summary.style.display === "none" || summary.style.display === "") {
+        summary.style.display = "block";
+        button.textContent = "Masquer le Résumé";
+    } else {
+        summary.style.display = "none";
+        button.textContent = "Afficher le Résumé";
+    }
+}

@@ -1,48 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VisageController!{% endblock %}
-
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-{% endblock %}
+{% block title %}Ses visages{% endblock %}
 
 {% block main %} 
-<div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="content-entete">
-                <h1 class="text-center text-gold">Et aujourd'hui?</h1>
-                <p class="text-center text-gold">Avec une vie riche et pleine d'expériences diverses, Sandra a toujours su tirer le meilleur parti de la vie! Voici qui elle est à l'heure actuelle. Affichage de ces différentes façettes</p>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="content-entete">
+                    <h1 class="text-center text-gold">Et aujourd'hui?</h1>
+                    <p class="text-center text-gold">Avec une vie riche et pleine d'expériences diverses, Sandra a toujours su tirer le meilleur parti de la vie! Voici qui elle est à l'heure actuelle. Affichage de ces différentes façettes</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-{# début de l'affichage des visages concernant Sandra #}
-{% for visage in allVisages %}
+    {# début de l'affichage des visages concernant Sandra #}
+    {% for visage in allVisages %}
 
-    {# J'affiche mes visages avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS. #}
-    <div class="visages {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-        <h1 class="text-center m-3"><strong>{{visage.Titre}}</strong></h1>
-        <q><em>{{visage.Resume}}</em></q>
-        
-        {# Lien qui nous amenera sur la page dédiée #}
-        <h4 class="text-center m-4"><a class="visage-link" href="{{ path('Visage', {'id': visage.id}) }}"><i class=""></i>
-                <strong>➔ {{visage.nomLien}}</strong>
-            </a>
-        </h4>
-    </div>
+        {# J'affiche mes visages avec un cycle pour les afficher une fois à gauche une fois à droite grâce au CSS. #}
+        <div class="visages {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
+            <h1 class="text-center m-3"><strong>{{visage.Titre}}</strong></h1>
+            <q><em>{{visage.Resume}}</em></q>
+            
+            {# Lien qui nous amenera sur la page dédiée #}
+            <h4 class="text-center m-4"><a class="visage-link" href="{{ path('Visage', {'id': visage.id}) }}"><i class=""></i>
+                    <strong>➔ {{visage.nomLien}}</strong>
+                </a>
+            </h4>
+        </div>
 
-{% endfor %}
+    {% endfor %}
 
-        <!-- Bouton Retour -->
-    <div class="back-button text-right m-4">
-        <button onclick="{{ path('home') }}" class="btn btn-primary" style="background-color: rgb(42, 46, 51)">
-            <i class="bi bi-arrow-counterclockwise"></i> Revenir à l'Acceuil
-        </button>
-    </div>
+            <!-- Bouton Retour -->
+        <div class="back-button text-right m-4">
+            <button onclick="{{ path('home') }}" class="btn btn-primary" style="background-color: rgb(42, 46, 51)">
+                <i class="bi bi-arrow-counterclockwise"></i> Revenir à l'Acceuil
+            </button>
+        </div>
 
 {% endblock %}

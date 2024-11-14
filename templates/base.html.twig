@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site présentant les différents visages de Sandra.">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -22,7 +24,7 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
 
-    <title>Les visages de Sandra! - {% block title %}{% endblock %}</title>
+    <title>Sandras - {% block title %}{% endblock %}</title>
 </head>
 
 <body class="default">
@@ -83,5 +85,6 @@
 
 <script src="{{ asset('assets/js/main.js') }}" defer></script>
 <script src="{{ asset('assets/js/toggle.js') }}" defer></script>
+<script src="{{ asset('assets/js/popup.js') }}" defer></script>
 
 </html>

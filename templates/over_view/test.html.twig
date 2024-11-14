@@ -1,0 +1,47 @@
+.twig<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation de Sandra</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .presentation-container {
+            display: flex; /* Utilise flexbox pour aligner les enfants en ligne */
+            justify-content: space-between; /* Équilibre l'espace entre les divs */
+            margin-top: 20px; /* Ajoute un peu d'espace au-dessus */
+        }
+
+        .box {
+            flex: 1; /* Chaque box prend un espace égal */
+            padding: 20px; /* Espacement interne */
+            margin: 0 10px; /* Ajoute de l'espace entre les box */
+            box-sizing: border-box; /* Inclut le padding dans la largeur */
+        }
+
+        .left {
+            background-color: lightblue; /* Couleur de fond pour la div gauche */
+        }
+
+        .right {
+            background-color: lightcoral; /* Couleur de fond pour la div droite */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+    <div class="content-entete text-gold text-center">
+        <h1>Qui est Sandra?</h1>
+        <h3>Femme moderne, elle aborde une grande palette de compétences</h3>
+        <i>C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
+    </div>
+
+    <div class="presentation-container">
+        <div class="box left">Div Gauche</div>
+        <div class="box right">Div Droite</div>
+    </div>
+</div>
+
+</body>
+</html>

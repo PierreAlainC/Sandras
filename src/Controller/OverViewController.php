@@ -28,4 +28,24 @@ class OverViewController extends AbstractController
             "allPresentations" => $allPresentations,
         ]);
     }
+
+        /**
+     * Page test.
+     * 
+     * @Route("/ConnaîtreSandratest", name="overviewtest")
+     * 
+     * @return Response
+     */
+    public function test(PresentationRepository $presentationRepository): Response
+    {   
+        //Je fait au préalable une injonction dans ma fonction overView pour être lié à PresentationRepository
+        //Je récupère toutes les infos de toutes les présentions dans la variable $allPresentation via ma requète findAll() de mon PresentationRepository ($presentationRepository->findAll())
+        $allPresentations = $presentationRepository->findAll();
+
+        //dd($allPresentations);
+
+        return $this->render('over_view/test.html.twig', [
+            "allPresentations" => $allPresentations,
+        ]);
+    }
 }

@@ -6,44 +6,40 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
-                <div class="content-entete text-gold">
+                <div class="content-entete text-gold text-center">
                     <h1>Qui est Sandra?</h1>
                     <h3>Femme moderne, elle aborde une grande palette de compétences</h3>
                     <i>C'est ICI que nous aurons la chance de pouvoir présenter le parcours de Sandra dans un long et joli résumé!!!</i>
                 </div>
             </div>
         </div>
-    </div>
 
-    {% for présentation in allPresentations %}
-        <div class="présentations {{ cycle(['Gauche', 'Droite'], loop.index0) }}">
-            <div class="container">
-                <h2 class="text-center m-4">
-                    <strong>{{ présentation.Titre }}</strong>
-                </h2>
-                <h5 class="m-3"><q><em>{{ présentation.SousTitre }}</em></q></h5>
-                <span class="toggle-icon" style="cursor: pointer;" data-target="#articleContent{{ loop.index }}">
+        {% for présentation in allPresentations %}
+            <div class="article-container">
+                <!-- Titre de l'article -->
+                <h1 class="article-title">{{ présentation.Titre }}</h1>
+
+                <!-- Sous-titre de l'article -->
+                <h3 class="article-subtitle"><em>{{ présentation.SousTitre }}</em></h3>
+
+                <!-- Lien pour afficher le résumé dans un pop-up -->
+                <span class="toggle-icon" style="cursor: pointer;" onclick="openModal('{{ loop.index }}')">
                     Afficher résumé &#9660;
                 </span>
-                <div id="articleContent{{ loop.index }}" class="collapse m-4">
+            </div>
+
+            <!-- Pop-up modale pour le résumé -->
+            <div id="modal{{ loop.index }}" class="modal">
+                <div class="modal-content">
+                    <!-- Croix de fermeture -->
+                    <span class="close-button">&times;</span>
+                    <h2>{{ présentation.Titre }}</h2>
                     <p>{{ présentation.Resume }}</p>
                     <div class="created-at">
                         Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-
-    <!-- Bouton Retour Page Accueil -->
-    <div class="back-button text-right m-4">
-        <button onclick="location.href='{{ path('home') }}'" class="btn btn-primary">
-            <i class="bi bi-arrow-counterclockwise"></i> Revenir à l'Acceuil
-        </button>
+        {% endfor %}
     </div>
-
-{% endblock %}
-
-{% block javascripts %}
-    <script src="{{ asset('assets/js/toggle.js') }}"></script>
 {% endblock %}

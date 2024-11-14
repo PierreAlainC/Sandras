@@ -31,21 +31,8 @@
     </head>
     <body class="ConnectionPage">
         <div class="wrapper">
-            <nav id="topnav" class="bg-dark text-white navbar navbar-expand-lg">
-                <div id="containerNavBar" class="container-fluid ">
-                    <a href="{{ path('unicorn') }}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo link-licorne">
-                        <img src="{{ asset('assets/favicon.png') }}" height="24" alt="Sandra">
-                        <span class="header-logo__title link-licorne">Sandra</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        {{ include ('security/_nav.html.twig')}}
-                    </div>
-                </div>
-            </nav>
+
+            {{ include ('security/_nav.html.twig')}}
 
             <div class="content">
                 <main>
