@@ -15,16 +15,16 @@
         </div>
 
         {% for présentation in allPresentations %}
-            <div class="article-container">
-                <!-- Titre de l'article -->
-                <h1 class="article-title">{{ présentation.Titre }}</h1>
+            <div class="presentation-container">
+                <!-- Titre de la presentation -->
+                <h1 class="presentation-title">{{ présentation.Titre }}</h1>
 
-                <!-- Sous-titre de l'article -->
-                <h3 class="article-subtitle"><em>{{ présentation.SousTitre }}</em></h3>
+                <!-- Sous-titre de l'presentation -->
+                <h3 class="presentation-subtitle"><em>{{ présentation.SousTitre }}</em></h3>
 
                 <!-- Lien pour afficher le résumé dans un pop-up -->
                 <span class="toggle-icon" style="cursor: pointer;" onclick="openModal('{{ loop.index }}')">
-                    Afficher résumé &#9660;
+                   &#128366; Afficher résumé &#128366;;
                 </span>
             </div>
 
