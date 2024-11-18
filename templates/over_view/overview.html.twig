@@ -15,28 +15,30 @@
         </div>
 
         {% for présentation in allPresentations %}
-            <div class="presentation-container">
-                <!-- Titre de la presentation -->
-                <h1 class="presentation-title">{{ présentation.Titre }}</h1>
+            <div id="container-presentation">
+                <div class="presentation-container">
+                    <!-- Titre de la presentation -->
+                    <h1 class="presentation-title">{{ présentation.Titre }}</h1>
 
-                <!-- Sous-titre de l'presentation -->
-                <h3 class="presentation-subtitle"><em>{{ présentation.SousTitre }}</em></h3>
+                    <!-- Sous-titre de l'presentation -->
+                    <h3 class="presentation-subtitle"><em>{{ présentation.SousTitre }}</em></h3>
 
-                <!-- Lien pour afficher le résumé dans un pop-up -->
-                <span class="toggle-icon" style="cursor: pointer;" onclick="openModal('{{ loop.index }}')">
-                   &#128366; Afficher résumé &#128366;;
-                </span>
-            </div>
+                    <!-- Lien pour afficher le résumé dans un pop-up -->
+                    <span class="toggle-icon" style="cursor: pointer;" onclick="openModal('{{ loop.index }}')">
+                    <span style="color:gold">&#128366;</span>Afficher résumé<span style="color:gold">&#128366;</span>
+                    </span>
+                </div>
 
-            <!-- Pop-up modale pour le résumé -->
-            <div id="modal{{ loop.index }}" class="modal">
-                <div class="modal-content">
-                    <!-- Croix de fermeture -->
-                    <span class="close-button">&times;</span>
-                    <h2>{{ présentation.Titre }}</h2>
-                    <p>{{ présentation.Resume }}</p>
-                    <div class="created-at">
-                        Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
+                <!-- Pop-up modale pour le résumé -->
+                <div id="modal{{ loop.index }}" class="modal">
+                    <div class="modal-content">
+                        <!-- Croix de fermeture -->
+                        <span class="close-button">&times;</span>
+                        <h2>{{ présentation.Titre }}</h2>
+                        <p>{{ présentation.Resume }}</p>
+                        <div class="created-at">
+                            Publié le : {{ présentation.createdAt|date('d/m/Y') }} à {{ présentation.createdAt|date('H:i') }}
+                        </div>
                     </div>
                 </div>
             </div>

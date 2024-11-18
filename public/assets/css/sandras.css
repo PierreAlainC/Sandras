@@ -181,17 +181,20 @@ main {
 }
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− PRESENTATIONS OVERVIEW AFFICHAGE CONTENU −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
-/* Styles de base pour la présentation */
-.presentation-container {
+#container-presentation{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center; /* Centrer tout le contenu */
-    margin: 20px auto; /* Centre l'encadré horizontalement */
+
+}
+
+/* Styles de base pour la présentation */
+.presentation-container {
+    margin: 2em auto; /* Centre l'encadré horizontalement */
     padding: 20px; /* Espacement interne */
     width: 80%;
-    max-width: 600px;
     border: 2px solid rgba(255, 217, 0, 0.549); /* Bordure */
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0px 0px 20px rgba(255, 217, 0, 0.549); /* Ombre */
@@ -208,7 +211,10 @@ main {
     margin: 10px 0; /* Espacement avec les autres éléments */
 }
 
-
+.modal-content p{
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
 
 
 /* Styles pour les titres */
