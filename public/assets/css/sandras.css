@@ -360,14 +360,22 @@ main {
     font-family: 'Times New Roman', Times, serif;
 }
 
+#visage-container{
+    position: relative;
+}
 .Gauche {
+    width: 65%;
     padding: 2em 2em;
-    margin: 2em 50em 2em 10em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .Droite {
+    left: 33%;
+    width: 65%;
     padding: 2em 2em;
-    margin: 2em 10em 2em 50em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .visage-link {
@@ -376,6 +384,10 @@ main {
 
 .visage-link:hover {
     color: gold;
+}
+
+.article-content p{
+    margin: 10%;
 }
 
 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− BOUTON RETOUR −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
