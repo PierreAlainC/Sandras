@@ -364,6 +364,7 @@ main {
     position: relative;
 }
 .Gauche {
+    left: 2%;
     width: 65%;
     padding: 2em 2em;
     margin-top: 2em;
